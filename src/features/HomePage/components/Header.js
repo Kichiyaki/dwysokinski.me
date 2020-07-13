@@ -6,12 +6,16 @@ import bg from "./header-bg.jpg"
 
 const useStyles = makeStyles(theme => ({
   header: {
+    minHeight: "100vh",
     backgroundImage: `url(${bg})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     clipPath: "polygon(0 0,100% 0,100% 88%,0 100%)",
 
     height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
     [theme.breakpoints.down("xs")]: {
       margin: 0,
       clipPath: "none",
@@ -20,9 +24,7 @@ const useStyles = makeStyles(theme => ({
   container: {
     textAlign: "center",
     height: "100%",
-    display: "flex",
-    justifyContent: "center",
-    flexDirection: "column",
+    paddingBottom: theme.spacing(8),
   },
   textContainer: {
     paddingTop: theme.spacing(10),

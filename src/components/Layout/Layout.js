@@ -8,10 +8,6 @@ import Header from "./Header"
 
 const useStyles = makeStyles(theme => ({
   main: {
-    display: "flex",
-  },
-  contentWrapper: {
-    width: "100%",
     minHeight: "calc(100vh - 200px)",
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(3),
@@ -24,11 +20,7 @@ const Layout = ({ children, className, headerProps }) => {
   return (
     <Fragment>
       <Header {...headerProps} />
-      <main className={classes.main}>
-        <div className={classnames(className, classes.contentWrapper)}>
-          {children}
-        </div>
-      </main>
+      <main className={classnames(className, classes.main)}>{children}</main>
       <CssBaseline />
     </Fragment>
   )
