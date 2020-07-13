@@ -1,13 +1,7 @@
 import React from "react"
 
-import Layout from "@components/Layout/Layout"
-import SEO from "@components/SEO"
+import HomePage from "@features/HomePage/HomePage"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Strona główna" />
-    asd
-  </Layout>
-)
+const IndexPage = props => <HomePage {...props} />
 
 export default IndexPage
