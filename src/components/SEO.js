@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import ogThumbnail from "@images/og_thumbnail.png"
 
-function SEO({ description, lang, meta, title, location }) {
+function SEO({ description, lang, meta, title, pathname }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -48,7 +48,7 @@ function SEO({ description, lang, meta, title, location }) {
         },
         {
           property: `og:url`,
-          content: `${site.siteMetadata.siteUrl}${location}`,
+          content: `${site.siteMetadata.siteUrl}${pathname}`,
         },
         {
           property: `og:image`,
@@ -88,7 +88,7 @@ function SEO({ description, lang, meta, title, location }) {
         },
         {
           name: `twitter:url`,
-          content: `${site.siteMetadata.siteUrl}${location}`,
+          content: `${site.siteMetadata.siteUrl}${pathname}`,
         },
         {
           name: `twitter:image`,
@@ -102,7 +102,7 @@ function SEO({ description, lang, meta, title, location }) {
     >
       <link
         rel="canonical"
-        content={`${site.siteMetadata.siteUrl}${location}`}
+        content={`${site.siteMetadata.siteUrl}${pathname}`}
       ></link>
     </Helmet>
   )

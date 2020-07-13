@@ -3,7 +3,7 @@ const siteUrl = "https://dawid-wysokinski.pl"
 module.exports = {
   siteMetadata: {
     title: `Dawid Wysokiński`,
-    description: `Programista stron WWW & Full-Stack Web Developer.`,
+    description: `Programista stron WWW & Full Stack Web Developer & Frontend Developer & Backend Developer.`,
     author: `@Dawid56143781`,
     authorFullName: "Dawid Wysokiński",
     email: "xyztojajestem@gmail.com",

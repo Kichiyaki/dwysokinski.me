@@ -7,6 +7,7 @@ import SEO from "@components/SEO"
 import Header from "./components/Header"
 import AboutMe from "./components/AboutMe"
 import Technologies from "./components/Technologies/Technologies"
+import Projects from "./components/Projects/Projects"
 
 const useStyles = makeStyles(theme => ({
   layout: {
@@ -23,6 +24,7 @@ const HomePage = ({ location }) => {
       <AboutMe />
       <Divider />
       <Technologies />
+      <Projects />
     </Layout>
   )
 }
