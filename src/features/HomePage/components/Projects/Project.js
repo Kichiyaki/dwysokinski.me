@@ -9,6 +9,7 @@ import {
   Typography,
   Button,
   Chip,
+  Link,
 } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
@@ -54,6 +55,9 @@ const useStyles = makeStyles(theme => ({
     },
     "& > *": {
       marginBottom: theme.spacing(1),
+      [theme.breakpoints.down("xs")]: {
+        width: "100%",
+      },
     },
   },
   cover: {
@@ -66,12 +70,12 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function Project({ reverse }) {
+function Project({ reverse, title, description, technologies, github, live }) {
   const classes = useStyles()
   return (
     <Card
       className={classnames(classes.card, {
-        reverse: reverse,
+        reverse,
       })}
     >
       <CardMedia
@@ -82,36 +86,33 @@ function Project({ reverse }) {
       <CardContent className={classes.cardContent}>
         <div className={classes.contentContainer}>
           <Typography variant="h3" gutterBottom>
-            Projekt
+            {title}
           </Typography>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-            tincidunt ligula eu ultricies ornare. Morbi nec eleifend sapien.
-            Duis eu lorem tortor. Morbi consectetur hendrerit eros. Ut efficitur
-            laoreet placerat. Phasellus dignissim non dui ac maximus. Etiam
-            venenatis diam sed ligula consectetur viverra et vitae tortor. Donec
-            faucibus viverra nulla vitae rutrum. Nam ornare erat magna, non
-            sollicitudin justo venenatis in. Ut non metus vitae libero viverra
-            elementum. Vestibulum iaculis mi eget libero hendrerit aliquet.
-            Pellentesque nisl arcu, blandit a leo eget, semper porta mauris.
-            Suspendisse vehicula congue mauris sit amet hendrerit. Fusce et arcu
-            ligula. Fusce ut orci pharetra, consequat nibh eu, mollis augue.
-            Nulla eu mi fermentum nulla dignissim porta id in purus.
-          </Typography>
+          <Typography>{description}</Typography>
         </div>
         <div className={classes.divider}></div>
         <div className={classes.technologies}>
-          <Chip label="Technologia 1" color="secondary" />
-          <Chip label="Technologia 2" color="secondary" />
-          <Chip label="Technologia 3" color="secondary" />
+          {technologies.map(technology => {
+            return (
+              <Chip key={technology} label={technology} color="secondary" />
+            )
+          })}
         </div>
         <div className={classes.buttons}>
-          <Button variant="contained" color="secondary">
-            Github
-          </Button>
-          <Button variant="contained" color="secondary">
-            Wersja online
-          </Button>
+          {github && (
+            <Link underline="none" href={github}>
+              <Button variant="contained" color="secondary">
+                Github
+              </Button>
+            </Link>
+          )}
+          {live && (
+            <Link underline="none" href={live}>
+              <Button variant="contained" color="secondary">
+                Wersja online
+              </Button>
+            </Link>
+          )}
         </div>
       </CardContent>
     </Card>
