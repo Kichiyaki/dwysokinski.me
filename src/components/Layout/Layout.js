@@ -4,7 +4,8 @@ import classnames from "classnames"
 
 import { makeStyles } from "@material-ui/core/styles"
 import { CssBaseline } from "@material-ui/core"
-import Header from "./Header"
+import Navbar from "./Navbar"
+import Footer from "./Footer"
 
 const useStyles = makeStyles(theme => ({
   main: {
@@ -14,24 +15,35 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Layout = ({ children, className, headerProps }) => {
+const Layout = ({
+  children,
+  className,
+  navbarProps,
+  showNavbar,
+  showFooter,
+}) => {
   const classes = useStyles()
 
   return (
     <Fragment>
-      <Header {...headerProps} />
+      {showNavbar && <Navbar {...navbarProps} />}
       <main className={classnames(className, classes.main)}>{children}</main>
+      {showFooter && <Footer />}
       <CssBaseline />
     </Fragment>
   )
 }
 
 Layout.defaultProps = {
-  headerProps: {},
+  navbarProps: {},
+  showNavbar: true,
+  showFooter: true,
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  showNavbar: PropTypes.bool.isRequired,
+  showFooter: PropTypes.bool.isRequired,
 }
 
 export default Layout

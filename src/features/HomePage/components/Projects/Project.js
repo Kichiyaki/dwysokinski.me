@@ -1,5 +1,7 @@
 import React from "react"
+import PropTypes from "prop-types"
 import classnames from "classnames"
+import noImage from "./noImage.jpg"
 
 import { makeStyles } from "@material-ui/core/styles"
 import {
@@ -64,13 +66,20 @@ const useStyles = makeStyles(theme => ({
     width: "55%",
     [theme.breakpoints.down("sm")]: {
       width: "100%",
-      height: 0,
       paddingTop: "56.25%",
     },
   },
 }))
 
-function Project({ reverse, title, description, technologies, github, live }) {
+function Project({
+  reverse,
+  title,
+  description,
+  technologies,
+  github,
+  live,
+  img,
+}) {
   const classes = useStyles()
   return (
     <Card
@@ -78,11 +87,7 @@ function Project({ reverse, title, description, technologies, github, live }) {
         reverse,
       })}
     >
-      <CardMedia
-        image="https://material-ui.com/static/images/cards/live-from-space.jpg"
-        title="Live from space album cover"
-        className={classes.cover}
-      />
+      <CardMedia image={img} title={title} className={classes.cover} />
       <CardContent className={classes.cardContent}>
         <div className={classes.contentContainer}>
           <Typography variant="h3" gutterBottom>
@@ -121,6 +126,22 @@ function Project({ reverse, title, description, technologies, github, live }) {
 
 Project.defaultProps = {
   reverse: false,
+  title: "",
+  description: "",
+  technologies: [],
+  github: "",
+  live: "",
+  img: noImage,
+}
+
+Project.propTypes = {
+  reverse: PropTypes.bool.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  technologies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  github: PropTypes.string.isRequired,
+  live: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
 }
 
 export default Project

@@ -7,10 +7,14 @@ import Project from "./Project"
 
 const useStyles = makeStyles(theme => ({
   section: {
-    transform: "skewY(-4deg)",
-    padding: "8rem 1.5rem",
+    transform: "skewY(-7deg)",
+    padding: "8rem 0",
+    margin: "6rem 0",
     "& > *": {
-      transform: "skewY(4deg)",
+      transform: "skewY(7deg)",
+    },
+    [theme.breakpoints.down("sm")]: {
+      margin: "3rem 0",
     },
   },
   projects: {

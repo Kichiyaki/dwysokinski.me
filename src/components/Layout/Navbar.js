@@ -52,7 +52,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function Header({ className, ...rest }) {
+function Navbar({ className, ...rest }) {
   const [anchorEl, setAnchorEl] = useState(null)
   const classes = useStyles()
   const open = Boolean(anchorEl)
@@ -144,4 +144,4 @@ function Header({ className, ...rest }) {
   )
 }
 
-export default Header
+export default Navbar

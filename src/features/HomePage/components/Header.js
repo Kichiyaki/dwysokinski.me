@@ -10,13 +10,13 @@ const useStyles = makeStyles(theme => ({
     backgroundImage: `url(${bg})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    clipPath: "polygon(0 0,100% 0,100% 88%,0 100%)",
+    clipPath: "polygon(0 0,100% 0,100% 80vh,0 100%)",
 
     height: "100%",
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       margin: 0,
       clipPath: "none",
     },
@@ -25,9 +25,12 @@ const useStyles = makeStyles(theme => ({
     textAlign: "center",
     height: "100%",
     paddingBottom: theme.spacing(8),
+    [theme.breakpoints.down("sm")]: {
+      paddingBottom: theme.spacing(1),
+    },
   },
   textContainer: {
-    paddingTop: theme.spacing(10),
+    paddingTop: theme.spacing(12),
     paddingBottom: theme.spacing(5),
   },
 }))

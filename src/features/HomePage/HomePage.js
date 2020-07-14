@@ -8,6 +8,7 @@ import Header from "./components/Header"
 import AboutMe from "./components/AboutMe"
 import Technologies from "./components/Technologies/Technologies"
 import Projects from "./components/Projects/Projects"
+import Contact from "./components/Contact"
 
 const useStyles = makeStyles(theme => ({
   layout: {
@@ -18,13 +19,15 @@ const useStyles = makeStyles(theme => ({
 const HomePage = ({ location }) => {
   const classes = useStyles()
   return (
-    <Layout className={classes.layout} headerProps={{ position: "absolute" }}>
+    <Layout className={classes.layout} navbarProps={{ position: "absolute" }}>
       <SEO title="Strona główna" pathname={location.pathname} />
       <Header />
       <AboutMe />
       <Divider />
       <Technologies />
       <Projects />
+      <Contact />
+      <Divider />
     </Layout>
   )
 }
