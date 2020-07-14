@@ -16,151 +16,31 @@ const useStyles = makeStyles(theme => ({
 
 function AboutMe() {
   const classes = useStyles()
-  const {
-    html5Icon,
-    cssIcon,
-    scssIcon,
-    jsIcon,
-    reactIcon,
-    apolloIcon,
-    webpackIcon,
-    parcelIcon,
-    jestIcon,
-    strapiIcon,
-    ghostIcon,
-    golangIcon,
-    gqlgenIcon,
-    postgresqlIcon,
-    dockerIcon,
-    expressIcon,
-    nextjsIcon,
-  } = useStaticQuery(
-    graphql`
-      query {
-        html5Icon: file(relativePath: { eq: "technologies/html5.png" }) {
-          childImageSharp {
-            fixed(height: 45, quality: 100) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        cssIcon: file(relativePath: { eq: "technologies/css.png" }) {
-          childImageSharp {
-            fixed(height: 45, quality: 100) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        scssIcon: file(relativePath: { eq: "technologies/scss.png" }) {
-          childImageSharp {
-            fixed(height: 45, quality: 100) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        jsIcon: file(relativePath: { eq: "technologies/js.png" }) {
-          childImageSharp {
-            fixed(height: 45, quality: 100) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        reactIcon: file(relativePath: { eq: "technologies/react.png" }) {
-          childImageSharp {
-            fixed(height: 45, quality: 100) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        apolloIcon: file(relativePath: { eq: "technologies/apollo.png" }) {
-          childImageSharp {
-            fixed(height: 45, quality: 100) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        webpackIcon: file(relativePath: { eq: "technologies/webpack.png" }) {
-          childImageSharp {
-            fixed(height: 45, quality: 100) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        parcelIcon: file(relativePath: { eq: "technologies/parcel.webp" }) {
-          childImageSharp {
-            fixed(height: 45, quality: 100) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        jestIcon: file(relativePath: { eq: "technologies/jest.png" }) {
-          childImageSharp {
-            fixed(height: 45, quality: 100) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        strapiIcon: file(relativePath: { eq: "technologies/strapi.jpeg" }) {
-          childImageSharp {
-            fixed(height: 45, quality: 100) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        ghostIcon: file(relativePath: { eq: "technologies/ghost.png" }) {
-          childImageSharp {
-            fixed(height: 45, quality: 100) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        golangIcon: file(relativePath: { eq: "technologies/golang.png" }) {
-          childImageSharp {
-            fixed(height: 45, quality: 100) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        gqlgenIcon: file(relativePath: { eq: "technologies/gqlgen.png" }) {
-          childImageSharp {
-            fixed(height: 45, quality: 100) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        postgresqlIcon: file(
-          relativePath: { eq: "technologies/postgresql.png" }
-        ) {
-          childImageSharp {
-            fixed(height: 45, quality: 100) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        dockerIcon: file(relativePath: { eq: "technologies/docker.webp" }) {
-          childImageSharp {
-            fixed(height: 45, quality: 100) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        expressIcon: file(relativePath: { eq: "technologies/express.png" }) {
-          childImageSharp {
-            fixed(height: 45, quality: 100) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        nextjsIcon: file(relativePath: { eq: "technologies/nextjs.png" }) {
-          childImageSharp {
-            fixed(height: 45, quality: 100) {
-              ...GatsbyImageSharpFixed
+  const data = useStaticQuery(graphql`
+    {
+      allIcons: allFile(filter: { absolutePath: { regex: "/technologies/" } }) {
+        edges {
+          node {
+            relativePath
+            childImageSharp {
+              id
+              fixed(height: 45, quality: 100) {
+                ...GatsbyImageSharpFixed
+              }
             }
           }
         }
       }
-    `
-  )
+    }
+  `)
+
+  const findIcon = path => {
+    const edge = data.allIcons.edges.find(img => img.node.relativePath === path)
+    if (edge) {
+      return edge.node.childImageSharp.fixed
+    }
+    return {}
+  }
 
   return (
     <Section>
@@ -171,70 +51,76 @@ function AboutMe() {
         <Grid container spacing={2} alignItems="stretch">
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
-            <Technology fixed={html5Icon.childImageSharp.fixed} name="HTML" />
+            <Technology
+              fixed={findIcon("technologies/html5.png")}
+              name="HTML"
+            />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
-            <Technology fixed={cssIcon.childImageSharp.fixed} name="CSS" />
+            <Technology fixed={findIcon("technologies/css.png")} name="CSS" />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
-            <Technology fixed={scssIcon.childImageSharp.fixed} name="SCSS" />
+            <Technology fixed={findIcon("technologies/scss.png")} name="SCSS" />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
             <Technology
-              fixed={jsIcon.childImageSharp.fixed}
+              fixed={findIcon("technologies/js.png")}
               name="JavaScript"
             />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
-            <Technology fixed={reactIcon.childImageSharp.fixed} name="React" />
+            <Technology
+              fixed={findIcon("technologies/react.png")}
+              name="React"
+            />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
             <Technology
-              fixed={apolloIcon.childImageSharp.fixed}
+              fixed={findIcon("technologies/apollo.png")}
               name="Apollo"
             />
           </Grid>
 
           <Grid item xs={6} sm={4} md={2} lg={1}>
             <Technology
-              fixed={webpackIcon.childImageSharp.fixed}
+              fixed={findIcon("technologies/webpack.png")}
               name="Webpack"
             />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
             <Technology
-              fixed={parcelIcon.childImageSharp.fixed}
+              fixed={findIcon("technologies/parcel.webp")}
               name="Parcel"
             />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
-            <Technology fixed={jestIcon.childImageSharp.fixed} name="Jest" />
+            <Technology fixed={findIcon("technologies/jest.png")} name="Jest" />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
             <Technology
-              fixed={nextjsIcon.childImageSharp.fixed}
+              fixed={findIcon("technologies/nextjs.png")}
               name="Next.JS"
             />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
             <Technology
-              fixed={expressIcon.childImageSharp.fixed}
+              fixed={findIcon("technologies/express.png")}
               name="Express"
             />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
             <Technology
-              fixed={strapiIcon.childImageSharp.fixed}
+              fixed={findIcon("technologies/strapi.png")}
               name="Strapi"
             />
           </Grid>
@@ -242,37 +128,43 @@ function AboutMe() {
 
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
-            <Technology fixed={ghostIcon.childImageSharp.fixed} name="Ghost" />
+            <Technology
+              fixed={findIcon("technologies/ghost.png")}
+              name="Ghost"
+            />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
             <Technology
-              fixed={golangIcon.childImageSharp.fixed}
+              fixed={findIcon("technologies/golang.png")}
               name="Golang"
             />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
             <Technology
-              fixed={gqlgenIcon.childImageSharp.fixed}
+              fixed={findIcon("technologies/gqlgen.png")}
               name="gqlgen"
             />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
-            <Technology fixed={golangIcon.childImageSharp.fixed} name="Gin" />
+            <Technology
+              fixed={findIcon("technologies/golang.png")}
+              name="Gin"
+            />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
             <Technology
-              fixed={postgresqlIcon.childImageSharp.fixed}
+              fixed={findIcon("technologies/postgresql.png")}
               name="PostgreSQL"
             />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
             <Technology
-              fixed={dockerIcon.childImageSharp.fixed}
+              fixed={findIcon("technologies/docker.webp")}
               name="Docker"
             />
           </Grid>
