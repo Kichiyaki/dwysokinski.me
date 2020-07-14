@@ -5,7 +5,7 @@ import { Divider } from "@material-ui/core"
 import Layout from "@components/Layout/Layout"
 import SEO from "@components/SEO"
 import Header from "./components/Header"
-import AboutMe from "./components/AboutMe"
+import MyPriorities from "./components/MyPriorities/MyPriorities"
 import Technologies from "./components/Technologies/Technologies"
 import Projects from "./components/Projects/Projects"
 import Contact from "./components/Contact"
@@ -22,7 +22,7 @@ const HomePage = ({ location }) => {
     <Layout className={classes.layout} navbarProps={{ position: "absolute" }}>
       <SEO title="Strona główna" pathname={location.pathname} />
       <Header />
-      <AboutMe />
+      <MyPriorities />
       <Divider />
       <Technologies />
       <Projects />
