@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import classnames from "classnames"
 import * as routes from "@config/routes"
 import useSmoothScroll from "@libs/useSmoothScroll"
@@ -8,17 +8,8 @@ import { SECTION_ID as PROJECTS_SECTION_ID } from "@features/HomePage/components
 import { SECTION_ID as CONTACT_SECTION_ID } from "@features/HomePage/components/Contact"
 
 import { makeStyles } from "@material-ui/core/styles"
-import {
-  AppBar,
-  Toolbar,
-  Container,
-  Hidden,
-  Menu,
-  MenuItem,
-  Link,
-} from "@material-ui/core"
-import { Menu as MenuIcon } from "@material-ui/icons"
-import { Link as GatsbyLink, IconButton } from "gatsby-theme-material-ui"
+import { AppBar, Toolbar, Container, Link } from "@material-ui/core"
+import { Link as GatsbyLink } from "gatsby-theme-material-ui"
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -26,9 +17,14 @@ const useStyles = makeStyles(theme => ({
     color: "#fff",
     boxShadow: "none",
   },
-  hidden: {
+  linkContainer: {
     "& > *:not(:last-child)": {
       marginRight: theme.spacing(1.5),
+    },
+    [theme.breakpoints.down("xs")]: {
+      "& > *:not(:last-child)": {
+        marginRight: theme.spacing(0.75),
+      },
     },
   },
   logo: {
@@ -58,18 +54,8 @@ const useStyles = makeStyles(theme => ({
 }))
 
 function Navbar({ className, ...rest }) {
-  const [anchorEl, setAnchorEl] = useState(null)
   const classes = useStyles()
   const handleLinkClick = useSmoothScroll()
-  const open = Boolean(anchorEl)
-
-  const handleMenuOpen = event => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleMenuClose = () => {
-    setAnchorEl(null)
-  }
 
   return (
     <AppBar
@@ -86,95 +72,31 @@ function Navbar({ className, ...rest }) {
             </GatsbyLink>
           </div>
           <div className={classes.divider} />
-          <div>
-            <Hidden implementation="css" xsDown className={classes.hidden}>
-              <Link
-                title="Start"
-                color="inherit"
-                href={"#" + HEADER_ID}
-                onClick={handleLinkClick(HEADER_ID)}
-              >
-                Start
-              </Link>
-              <Link
-                title="Projekty"
-                color="inherit"
-                href={"#" + PROJECTS_SECTION_ID}
-                onClick={handleLinkClick(PROJECTS_SECTION_ID)}
-              >
-                Projekty
-              </Link>
-              <Link
-                title="Kontakt"
-                color="inherit"
-                href={"#" + CONTACT_SECTION_ID}
-                onClick={handleLinkClick(CONTACT_SECTION_ID)}
-              >
-                Kontakt
-              </Link>
-            </Hidden>
-            <Hidden implementation="css" smUp>
-              <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                onClick={handleMenuOpen}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={open}
-                onClose={handleMenuClose}
-                disableScrollLock
-              >
-                <MenuItem>
-                  <Link
-                    title="Start"
-                    color="inherit"
-                    underline="none"
-                    className={classes.link}
-                    href={"#" + HEADER_ID}
-                    onClick={handleLinkClick(HEADER_ID)}
-                  >
-                    Start
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link
-                    title="Projekty"
-                    color="inherit"
-                    underline="none"
-                    className={classes.link}
-                    href={"#" + PROJECTS_SECTION_ID}
-                    onClick={handleLinkClick(PROJECTS_SECTION_ID)}
-                  >
-                    Projekty
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link
-                    title="Kontakt"
-                    color="inherit"
-                    underline="none"
-                    className={classes.link}
-                    href={"#" + CONTACT_SECTION_ID}
-                    onClick={handleLinkClick(CONTACT_SECTION_ID)}
-                  >
-                    Kontakt
-                  </Link>
-                </MenuItem>
-              </Menu>
-            </Hidden>
+          <div className={classes.linkContainer}>
+            <Link
+              title="Start"
+              color="inherit"
+              href={"#" + HEADER_ID}
+              onClick={handleLinkClick(HEADER_ID)}
+            >
+              Start
+            </Link>
+            <Link
+              title="Projekty"
+              color="inherit"
+              href={"#" + PROJECTS_SECTION_ID}
+              onClick={handleLinkClick(PROJECTS_SECTION_ID)}
+            >
+              Projekty
+            </Link>
+            <Link
+              title="Kontakt"
+              color="inherit"
+              href={"#" + CONTACT_SECTION_ID}
+              onClick={handleLinkClick(CONTACT_SECTION_ID)}
+            >
+              Kontakt
+            </Link>
           </div>
         </Toolbar>
       </Container>

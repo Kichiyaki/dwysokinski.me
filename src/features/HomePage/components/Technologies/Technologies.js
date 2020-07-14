@@ -25,7 +25,7 @@ function AboutMe() {
             childImageSharp {
               id
               fixed(height: 45, quality: 100) {
-                ...GatsbyImageSharpFixed
+                ...GatsbyImageSharpFixed_withWebp
               }
             }
           }
