@@ -13,6 +13,7 @@ import {
   Chip,
   Link,
 } from "@material-ui/core"
+import BackgroundImage from "gatsby-background-image"
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -79,6 +80,7 @@ function Project({
   github,
   live,
   img,
+  fluid,
 }) {
   const classes = useStyles()
   return (
@@ -87,7 +89,15 @@ function Project({
         reverse,
       })}
     >
-      <CardMedia image={img} title={title} className={classes.cover} />
+      {fluid ? (
+        <BackgroundImage
+          fluid={fluid}
+          title={title}
+          className={classes.cover}
+        />
+      ) : (
+        <CardMedia image={img} title={title} className={classes.cover} />
+      )}
       <CardContent className={classes.cardContent}>
         <div className={classes.contentContainer}>
           <Typography variant="h3" gutterBottom>

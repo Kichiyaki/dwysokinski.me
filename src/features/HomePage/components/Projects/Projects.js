@@ -1,4 +1,5 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
 import { makeStyles } from "@material-ui/core/styles"
 import { Typography, Container } from "@material-ui/core"
@@ -24,20 +25,56 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+export const SECTION_ID = "projects"
+
 function Projects() {
   const classes = useStyles()
+  const data = useStaticQuery(graphql`
+    {
+      allCoverImages: allFile(
+        filter: { absolutePath: { regex: "/projects/" } }
+      ) {
+        edges {
+          node {
+            relativePath
+            childImageSharp {
+              id
+              fluid(maxWidth: 1000) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
   return (
-    <Section className={classes.section} bgColor={BG_COLOR.PRIMARY}>
+    <Section
+      id={SECTION_ID}
+      className={classes.section}
+      bgColor={BG_COLOR.PRIMARY}
+    >
       <Container>
         <Typography variant="h2" align="center" gutterBottom>
           Projekty
         </Typography>
         <div className={classes.projects}>
           {projects.map((project, index) => {
+            let fluid = undefined
+            if (project.fluid) {
+              const edge = data.allCoverImages.edges.find(
+                img => img.node.relativePath === project.fluid
+              )
+              if (edge) {
+                fluid = edge.node.childImageSharp.fluid
+              }
+            }
+
             return (
               <Project
                 key={project.title}
                 {...project}
+                fluid={fluid}
                 reverse={(index + 1) % 2 === 0}
               />
             )
@@ -85,6 +122,7 @@ const projects = [
       "React Native",
     ],
     github: "",
+    fluid: "projects/zdam.png",
     live: "https://zdamegzaminzawodowy.pl/",
   },
   {
@@ -93,6 +131,7 @@ const projects = [
     technologies: ["React", "Next.JS", "Bulma", "Ghost"],
     github: "https://github.com/Kichiyaki/matura-z-informatyki.pl",
     live: "https://matura-z-informatyki.pl/",
+    fluid: "projects/maturazinf.png",
   },
   {
     title: "dawid-wysokinski.pl",
@@ -100,12 +139,28 @@ const projects = [
     technologies: ["React", "Gatsby", "Material-UI"],
     github: "https://github.com/Kichiyaki/dawid-wysokinski.pl",
     live: "https://dawid-wysokinski.pl",
+    fluid: "projects/dw.png",
   },
   {
     title: "tribalbooster.pl",
     description: "",
     technologies: ["React", "Gatsby", "Material-UI"],
     live: "http://tribalbooster.pl/",
+    fluid: "projects/tribalbooster.png",
+  },
+  {
+    title: "OLX Crawler",
+    description:
+      "Program służący do automatycznego przeglądania ogłoszeń na portalu olx.",
+    technologies: [
+      "React",
+      "Material-UI",
+      "Golang",
+      "Colly",
+      "SQLite3",
+      "Echo",
+    ],
+    github: "https://github.com/Kichiyaki/olx-crawler",
   },
   {
     title: "Instaling.pl Bot",
@@ -125,12 +180,14 @@ const projects = [
     description: "",
     technologies: ["HTML", "CSS", "Bootstrap"],
     live: "https://dawid-wysokinski.pl/podglad/akademia/",
+    fluid: "projects/amz.png",
   },
   {
     title: "Freshline",
     description: "",
     technologies: ["Wordpress", "CSS", "Bootstrap"],
     live: "http://fresh-line.pl/",
+    fluid: "projects/freshline.png",
   },
 ]
 

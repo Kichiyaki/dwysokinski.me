@@ -1,7 +1,9 @@
 import React from "react"
+import useSmoothScroll from "@libs/useSmoothScroll"
+import { SECTION_ID } from "./Contact"
 
 import { makeStyles } from "@material-ui/core/styles"
-import { Container, Typography, Button } from "@material-ui/core"
+import { Container, Typography, Button, Link } from "@material-ui/core"
 import bg from "./header-bg.jpg"
 
 const useStyles = makeStyles(theme => ({
@@ -35,10 +37,13 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+export const HEADER_ID = "start"
+
 function Header() {
   const classes = useStyles()
+  const handleLinkClick = useSmoothScroll()
   return (
-    <header className={classes.header}>
+    <header id={HEADER_ID} className={classes.header}>
       <Container className={classes.container}>
         <div>
           <div className={classes.textContainer}>
@@ -52,9 +57,15 @@ function Header() {
               Masz projekt, pomysł lub problem, który chcesz ze mną omówić?
             </Typography>
           </div>
-          <Button variant="outlined" size="large">
-            <Typography variant="h4">Skontaktuj się</Typography>
-          </Button>
+          <Link
+            underline="none"
+            to={"#" + SECTION_ID}
+            onClick={handleLinkClick(SECTION_ID)}
+          >
+            <Button variant="outlined" size="large">
+              <Typography variant="h4">Skontaktuj się</Typography>
+            </Button>
+          </Link>
         </div>
       </Container>
     </header>

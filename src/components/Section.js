@@ -34,7 +34,7 @@ export const SIZE = {
   MEDIUM: "medium",
 }
 
-function Section({ children, className, bgColor, component, size }) {
+function Section({ children, className, bgColor, component, size, ...rest }) {
   const classes = useStyles()
   const Component = component || "section"
   return (
@@ -44,6 +44,7 @@ function Section({ children, className, bgColor, component, size }) {
         "is-black": bgColor === BG_COLOR.BLACK,
         "is-small": size === SIZE.SMALL,
       })}
+      {...rest}
     >
       {children}
     </Component>

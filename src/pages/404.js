@@ -23,7 +23,7 @@ const NotFoundPage = ({ location }) => {
   const classes = useStyles()
 
   return (
-    <Layout className={classes.layout} showHeader={false} showFooter={false}>
+    <Layout className={classes.layout} showNavbar={false} showFooter={false}>
       <SEO
         title="Strona nie została znaleziona"
         description="Strona nie została znaleziona"

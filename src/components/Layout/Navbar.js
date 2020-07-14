@@ -1,7 +1,11 @@
 import React, { useState } from "react"
 import classnames from "classnames"
 import * as routes from "@config/routes"
+import useSmoothScroll from "@libs/useSmoothScroll"
 import logo from "@images/logo.svg"
+import { HEADER_ID } from "@features/HomePage/components/Header"
+import { SECTION_ID as PROJECTS_SECTION_ID } from "@features/HomePage/components/Projects/Projects"
+import { SECTION_ID as CONTACT_SECTION_ID } from "@features/HomePage/components/Contact"
 
 import { makeStyles } from "@material-ui/core/styles"
 import {
@@ -11,9 +15,10 @@ import {
   Hidden,
   Menu,
   MenuItem,
+  Link,
 } from "@material-ui/core"
 import { Menu as MenuIcon } from "@material-ui/icons"
-import { Link, IconButton } from "gatsby-theme-material-ui"
+import { Link as GatsbyLink, IconButton } from "gatsby-theme-material-ui"
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -55,6 +60,7 @@ const useStyles = makeStyles(theme => ({
 function Navbar({ className, ...rest }) {
   const [anchorEl, setAnchorEl] = useState(null)
   const classes = useStyles()
+  const handleLinkClick = useSmoothScroll()
   const open = Boolean(anchorEl)
 
   const handleMenuOpen = event => {
@@ -75,18 +81,36 @@ function Navbar({ className, ...rest }) {
       <Container>
         <Toolbar className={classes.toolbar} disableGutters>
           <div className={classes.titleContainer}>
-            <Link title="Strona główna" color="inherit" to={routes.HOME}>
+            <GatsbyLink title="Strona główna" color="inherit" to={routes.HOME}>
               <img className={classes.logo} src={logo} alt="logo" />
-            </Link>
+            </GatsbyLink>
           </div>
           <div className={classes.divider} />
           <div>
             <Hidden implementation="css" xsDown className={classes.hidden}>
-              <Link title="Strona główna" color="inherit" to={routes.HOME}>
-                Strona główna
+              <Link
+                title="Start"
+                color="inherit"
+                href={"#" + HEADER_ID}
+                onClick={handleLinkClick(HEADER_ID)}
+              >
+                Start
               </Link>
-              <Link title="Projekty" color="inherit" to={routes.PROJECTS}>
+              <Link
+                title="Projekty"
+                color="inherit"
+                href={"#" + PROJECTS_SECTION_ID}
+                onClick={handleLinkClick(PROJECTS_SECTION_ID)}
+              >
                 Projekty
+              </Link>
+              <Link
+                title="Kontakt"
+                color="inherit"
+                href={"#" + CONTACT_SECTION_ID}
+                onClick={handleLinkClick(CONTACT_SECTION_ID)}
+              >
+                Kontakt
               </Link>
             </Hidden>
             <Hidden implementation="css" smUp>
@@ -115,13 +139,14 @@ function Navbar({ className, ...rest }) {
               >
                 <MenuItem>
                   <Link
-                    title="Strona główna"
+                    title="Start"
                     color="inherit"
                     underline="none"
                     className={classes.link}
-                    to={routes.HOME}
+                    href={"#" + HEADER_ID}
+                    onClick={handleLinkClick(HEADER_ID)}
                   >
-                    Strona główna
+                    Start
                   </Link>
                 </MenuItem>
                 <MenuItem>
@@ -130,9 +155,22 @@ function Navbar({ className, ...rest }) {
                     color="inherit"
                     underline="none"
                     className={classes.link}
-                    to={routes.PROJECTS}
+                    href={"#" + PROJECTS_SECTION_ID}
+                    onClick={handleLinkClick(PROJECTS_SECTION_ID)}
                   >
                     Projekty
+                  </Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link
+                    title="Kontakt"
+                    color="inherit"
+                    underline="none"
+                    className={classes.link}
+                    href={"#" + CONTACT_SECTION_ID}
+                    onClick={handleLinkClick(CONTACT_SECTION_ID)}
+                  >
+                    Kontakt
                   </Link>
                 </MenuItem>
               </Menu>

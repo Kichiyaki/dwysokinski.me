@@ -11,13 +11,9 @@ import Section from "@components/Section"
 
 const useStyles = makeStyles(theme => {
   return {
-    container: {
-      textAlign: "center",
-    },
     typography: {
       display: "flex",
       alignItems: "center",
-      justifyContent: "center",
       wordBreak: "break-all",
       "& > *:not(:last-child)": {
         marginRight: theme.spacing(1),
@@ -31,6 +27,8 @@ const useStyles = makeStyles(theme => {
   }
 })
 
+export const SECTION_ID = "contact"
+
 function Contact() {
   const classes = useStyles()
 
@@ -40,13 +38,15 @@ function Contact() {
   }
 
   return (
-    <Section size="small">
-      <Container maxWidth="md" className={classes.container}>
+    <Section size="small" id={SECTION_ID}>
+      <Container maxWidth="md">
         <Grid container alignItems="center" spacing={1}>
-          <Grid item xs={12} sm={5}>
-            <Typography variant="h2">Kontakt</Typography>
+          <Grid item xs={12} sm={6}>
+            <Typography align="center" variant="h2">
+              Kontakt
+            </Typography>
           </Grid>
-          <Grid item xs={12} sm={7}>
+          <Grid item xs={12} sm={6}>
             <div className={classes.contactUrls}>
               <Typography className={classes.typography} variant="h6">
                 <EmailIcon fontSize="large" />
