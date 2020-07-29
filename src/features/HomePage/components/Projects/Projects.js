@@ -173,13 +173,6 @@ const projects = [
     github: "https://github.com/Kichiyaki/margonem-mini-bot",
   },
   {
-    title: "tribalbooster.pl",
-    description: "",
-    technologies: ["React", "Gatsby", "Material-UI"],
-    live: "http://tribalbooster.pl/",
-    fluid: "projects/tribalbooster.png",
-  },
-  {
     title: "Akademia Młodego Inżyniera",
     description: "",
     technologies: ["HTML", "CSS", "Bootstrap"],
