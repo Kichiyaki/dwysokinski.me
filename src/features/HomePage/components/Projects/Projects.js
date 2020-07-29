@@ -104,6 +104,7 @@ const projects = [
       "Traefik",
     ],
     github: "",
+    fluid: "projects/twhelp.png",
     live: "https://tribalwarshelp.com/",
   },
   {
@@ -142,13 +143,6 @@ const projects = [
     fluid: "projects/dw.png",
   },
   {
-    title: "tribalbooster.pl",
-    description: "",
-    technologies: ["React", "Gatsby", "Material-UI"],
-    live: "http://tribalbooster.pl/",
-    fluid: "projects/tribalbooster.png",
-  },
-  {
     title: "OLX Crawler",
     description:
       "Program służący do automatycznego przeglądania ogłoszeń na portalu olx.",
@@ -160,12 +154,14 @@ const projects = [
       "SQLite3",
       "Echo",
     ],
+    fluid: "projects/olx.png",
     github: "https://github.com/Kichiyaki/olx-crawler",
   },
   {
     title: "Instaling.pl Bot",
     description: "Bot automatycznie wykonujący sesje na stronie instaling.pl.",
     technologies: ["Golang", "Lorca"],
+    fluid: "projects/instaling.png",
     github: "https://github.com/Kichiyaki/Instaling-Bot",
   },
   {
@@ -173,7 +169,15 @@ const projects = [
     description:
       "Bot służący do zużywania staminy w mobilnej wersji gry margonem, sprzedawania itemów i autoleczenia.",
     technologies: ["Golang", "Colly"],
+    fluid: "projects/margonem.png",
     github: "https://github.com/Kichiyaki/margonem-mini-bot",
+  },
+  {
+    title: "tribalbooster.pl",
+    description: "",
+    technologies: ["React", "Gatsby", "Material-UI"],
+    live: "http://tribalbooster.pl/",
+    fluid: "projects/tribalbooster.png",
   },
   {
     title: "Akademia Młodego Inżyniera",
