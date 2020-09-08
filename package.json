@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "dawid-wysokinski.pl",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Personal website",
   "version": "0.1.0",
   "author": "Dawid Wysokiński <xyztojajestem@gmail.com>",
   "dependencies": {
@@ -34,21 +34,20 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "0BSD",
+  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/Kichiyaki/dawid-wysokinski.pl"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/Kichiyaki/dawid-wysokinski.pl/issues"
   }
 }
