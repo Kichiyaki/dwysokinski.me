@@ -55,7 +55,7 @@ const useStyles = makeStyles(theme => ({
 
 function Navbar({ className, ...rest }) {
   const classes = useStyles()
-  const handleLinkClick = useSmoothScroll()
+  const handleClickLink = useSmoothScroll()
 
   return (
     <AppBar
@@ -77,7 +77,7 @@ function Navbar({ className, ...rest }) {
               title="Start"
               color="inherit"
               href={"#" + HEADER_ID}
-              onClick={handleLinkClick(HEADER_ID)}
+              onClick={handleClickLink(HEADER_ID)}
             >
               Start
             </Link>
@@ -85,7 +85,7 @@ function Navbar({ className, ...rest }) {
               title="Projekty"
               color="inherit"
               href={"#" + PROJECTS_SECTION_ID}
-              onClick={handleLinkClick(PROJECTS_SECTION_ID)}
+              onClick={handleClickLink(PROJECTS_SECTION_ID)}
             >
               Projekty
             </Link>
@@ -93,7 +93,7 @@ function Navbar({ className, ...rest }) {
               title="Kontakt"
               color="inherit"
               href={"#" + CONTACT_SECTION_ID}
-              onClick={handleLinkClick(CONTACT_SECTION_ID)}
+              onClick={handleClickLink(CONTACT_SECTION_ID)}
             >
               Kontakt
             </Link>

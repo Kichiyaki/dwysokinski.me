@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import classnames from "classnames"
 
 import { makeStyles } from "@material-ui/core/styles"
-import { Helmet } from "react-helmet"
 import { CssBaseline } from "@material-ui/core"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
@@ -27,12 +26,6 @@ const Layout = ({
 
   return (
     <Fragment>
-      <Helmet>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-          rel="stylesheet"
-        ></link>
-      </Helmet>
       {showNavbar && <Navbar {...navbarProps} />}
       <main className={classnames(className, classes.main)}>{children}</main>
       {showFooter && <Footer />}
