@@ -74,34 +74,23 @@ function AboutMe() {
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
             <Technology
-              fixed={findIcon("technologies/react.png")}
-              name="React"
+              fixed={findIcon("technologies/typescript.png")}
+              name="TypeScript"
             />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
             <Technology
-              fixed={findIcon("technologies/apollo.png")}
-              name="Apollo"
+              fixed={findIcon("technologies/react.png")}
+              name="React"
             />
           </Grid>
 
           <Grid item xs={6} sm={4} md={2} lg={1}>
             <Technology
-              fixed={findIcon("technologies/webpack.png")}
-              name="Webpack"
+              fixed={findIcon("technologies/gatsby.png")}
+              name="Gatsby"
             />
-          </Grid>
-          <Grid item className={classes.hide} lg={1}></Grid>
-          <Grid item xs={6} sm={4} md={2} lg={1}>
-            <Technology
-              fixed={findIcon("technologies/parcel.webp")}
-              name="Parcel"
-            />
-          </Grid>
-          <Grid item className={classes.hide} lg={1}></Grid>
-          <Grid item xs={6} sm={4} md={2} lg={1}>
-            <Technology fixed={findIcon("technologies/jest.png")} name="Jest" />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
@@ -109,6 +98,10 @@ function AboutMe() {
               fixed={findIcon("technologies/nextjs.png")}
               name="Next.JS"
             />
+          </Grid>
+          <Grid item className={classes.hide} lg={1}></Grid>
+          <Grid item xs={6} sm={4} md={2} lg={1}>
+            <Technology fixed={findIcon("technologies/jest.png")} name="Jest" />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
@@ -125,12 +118,19 @@ function AboutMe() {
             />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
-
-          <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
             <Technology
               fixed={findIcon("technologies/ghost.png")}
               name="Ghost"
+            />
+          </Grid>
+          <Grid item className={classes.hide} lg={1}></Grid>
+
+          <Grid item className={classes.hide} lg={1}></Grid>
+          <Grid item xs={6} sm={4} md={2} lg={1}>
+            <Technology
+              fixed={findIcon("technologies/graphql.png")}
+              name="GraphQL"
             />
           </Grid>
           <Grid item className={classes.hide} lg={1}></Grid>
