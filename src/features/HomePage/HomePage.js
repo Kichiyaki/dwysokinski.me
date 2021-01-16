@@ -7,7 +7,7 @@ import SEO from "@components/SEO"
 import Header from "./components/Header"
 import MyPriorities from "./components/MyPriorities/MyPriorities"
 import Technologies from "./components/Technologies/Technologies"
-import Projects from "./components/Projects/Projects"
+import Portfolio from "./components/Portfolio/Portfolio"
 import Contact from "./components/Contact"
 
 const useStyles = makeStyles(theme => ({
@@ -20,12 +20,12 @@ const HomePage = ({ location }) => {
   const classes = useStyles()
   return (
     <Layout className={classes.layout} navbarProps={{ position: "absolute" }}>
-      <SEO title="Strona główna" pathname={location.pathname} />
+      <SEO pathname={location.pathname} />
       <Header />
       <MyPriorities />
       <Divider />
       <Technologies />
-      <Projects />
+      <Portfolio />
       <Contact />
       <Divider />
     </Layout>

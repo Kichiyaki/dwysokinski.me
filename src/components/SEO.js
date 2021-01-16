@@ -13,7 +13,7 @@ function SEO({ description, lang, meta, title, pathname }) {
             title
             description
             siteUrl
-            author
+            authorTwitter
           }
         }
       }
@@ -27,8 +27,8 @@ function SEO({ description, lang, meta, title, pathname }) {
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={title ?? site.siteMetadata.title}
+      titleTemplate={title ? `%s | ${site.siteMetadata.title}` : "%s"}
       meta={[
         {
           name: `description`,
@@ -72,7 +72,7 @@ function SEO({ description, lang, meta, title, pathname }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.authorTwitter,
         },
         {
           name: `twitter:card`,

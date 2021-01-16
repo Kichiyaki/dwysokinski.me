@@ -25,9 +25,9 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export const SECTION_ID = "projects"
+export const SECTION_ID = "portfolio"
 
-function Projects() {
+function Portfolio() {
   const classes = useStyles()
   const data = useStaticQuery(graphql`
     {
@@ -56,7 +56,7 @@ function Projects() {
     >
       <Container>
         <Typography variant="h2" align="center" gutterBottom>
-          Projekty
+          My work
         </Typography>
         <div className={classes.projects}>
           {projects.map((project, index) => {
@@ -89,7 +89,7 @@ const projects = [
   {
     title: "TWHelp",
     description:
-      "Serwis zawierający różne pomoce dla graczy plemion, zaczynając od bota na Discorda i przeróżnych skryptów, kończąc na ogólnodostępnym API z danymi serwerów plemion (informacje o graczach, wioskach, plemionach, zmianach plemion itd.).",
+      "A stat tracking and tools website, scripts, a public GraphQL API and a Discord bot for the browser-based game Tribal Wars.",
     technologies: [
       "GraphQL",
       "Golang",
@@ -116,7 +116,7 @@ const projects = [
   {
     title: "Zdam Egzamin Zawodowy",
     description:
-      "Aplikacja mobilna oraz webowa przeznaczona do wykonywania testów zawodowych.",
+      "A mobile and web app for practising the theoretical part of the vocational exam.",
     technologies: [
       "GraphQL",
       "Golang",
@@ -142,17 +142,16 @@ const projects = [
     fluid: "projects/maturazinf.png",
   },
   {
-    title: "dawid-wysokinski.pl",
+    title: "dwysokinski.me",
     description: "",
     technologies: ["React", "Gatsby", "Material-UI"],
-    github: "https://github.com/Kichiyaki/dawid-wysokinski.pl",
-    live: "https://dawid-wysokinski.pl",
+    github: "https://github.com/Kichiyaki/dwysokinski.me",
+    live: "https://dwysokinski.me",
     fluid: "projects/dw.png",
   },
   {
     title: "OLX Crawler",
-    description:
-      "Program służący do automatycznego przeglądania ogłoszeń na portalu olx.",
+    description: "An app written in Go to observe olx.pl ads.",
     technologies: [
       "Golang",
       "Colly",
@@ -166,7 +165,7 @@ const projects = [
   },
   {
     title: "Instaling.pl Bot",
-    description: "Bot automatycznie wykonujący testy na stronie instaling.pl.",
+    description: "A bot that solves the instaling.pl vocabulary test for you.",
     technologies: ["Golang", "Lorca"],
     fluid: "projects/instaling.png",
     github: "https://github.com/Kichiyaki/Instaling-Bot",
@@ -174,7 +173,7 @@ const projects = [
   {
     title: "Margonem Mini Bot",
     description:
-      "Bot służący do zużywania staminy w mobilnej wersji gry margonem, sprzedawania itemów i autoleczenia.",
+      "A bot for the mobile client of the browser-based MMORPG game Margonem.",
     technologies: ["Golang", "Colly"],
     fluid: "projects/margonem.png",
     github: "https://github.com/Kichiyaki/margonem-mini-bot",
@@ -183,7 +182,7 @@ const projects = [
     title: "Akademia Młodego Inżyniera",
     description: "",
     technologies: ["HTML", "CSS", "Bootstrap"],
-    live: "https://dawid-wysokinski.pl/podglad/akademia/",
+    live: "https://dwysokinski.me/preview/akademia/",
     fluid: "projects/amz.png",
   },
   {
@@ -195,4 +194,4 @@ const projects = [
   },
 ]
 
-export default Projects
+export default Portfolio

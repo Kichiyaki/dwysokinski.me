@@ -25,7 +25,7 @@ function AboutMe() {
             childImageSharp {
               id
               fixed(height: 45, quality: 100) {
-                ...GatsbyImageSharpFixed_withWebp
+                ...GatsbyImageSharpFixed
               }
             }
           }
@@ -46,7 +46,7 @@ function AboutMe() {
     <Section>
       <Container>
         <Typography align="center" variant="h2" gutterBottom>
-          Używane przeze mnie technologie / narzędzia
+          Technologies / tools I use
         </Typography>
         <Grid container spacing={2} alignItems="stretch">
           <Grid item className={classes.hide} lg={1}></Grid>
@@ -164,7 +164,7 @@ function AboutMe() {
           <Grid item className={classes.hide} lg={1}></Grid>
           <Grid item xs={6} sm={4} md={2} lg={1}>
             <Technology
-              fixed={findIcon("technologies/docker.webp")}
+              fixed={findIcon("technologies/docker.png")}
               name="Docker"
             />
           </Grid>

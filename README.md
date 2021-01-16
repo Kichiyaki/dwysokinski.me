@@ -1,4 +1,4 @@
-# dawid-wysokinski.pl
+# dwysokinski.me
 
 My personal website.
 

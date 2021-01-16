@@ -25,21 +25,21 @@ const NotFoundPage = ({ location }) => {
   return (
     <Layout className={classes.layout} showNavbar={false} showFooter={false}>
       <SEO
-        title="Strona nie została znaleziona"
-        description="Strona nie została znaleziona"
+        title="Page not found"
+        description="Page not found"
         pathname={location.pathname}
       />
       <Container className={classes.container}>
         <Typography gutterBottom variant="h1">
-          Strona nie została znaleziona
+          Page not found
         </Typography>
         <Typography gutterBottom variant="h4">
-          Wygląda na to, że kliknąłeś niedziałający link lub wprowadziłeś adres
-          URL, który nie istnieje.
+          Looks like you've followed a broken link or entered a URL that doesn't
+          exist on this site.
         </Typography>
         <Typography variant="h4">
           <Link color="secondary" to="/">
-            Wróć na stronę główną.
+            Back to site
           </Link>
         </Typography>
       </Container>

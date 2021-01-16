@@ -1,5 +1,5 @@
 {
-  "name": "dawid-wysokinski.pl",
+  "name": "dwysokinski.me",
   "private": true,
   "description": "Personal website",
   "version": "0.1.0",
@@ -46,9 +46,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kichiyaki/dawid-wysokinski.pl"
+    "url": "https://github.com/Kichiyaki/dwysokinski.me"
   },
   "bugs": {
-    "url": "https://github.com/Kichiyaki/dawid-wysokinski.pl/issues"
+    "url": "https://github.com/Kichiyaki/dwysokinski.me/issues"
   }
 }

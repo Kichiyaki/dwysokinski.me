@@ -4,12 +4,63 @@ import * as routes from "@config/routes"
 import useSmoothScroll from "@libs/useSmoothScroll"
 import logo from "@images/logo.svg"
 import { HEADER_ID } from "@features/HomePage/components/Header"
-import { SECTION_ID as PROJECTS_SECTION_ID } from "@features/HomePage/components/Projects/Projects"
+import { SECTION_ID as PORTFOLIO_SECTION_ID } from "@features/HomePage/components/Portfolio/Portfolio"
 import { SECTION_ID as CONTACT_SECTION_ID } from "@features/HomePage/components/Contact"
 
 import { makeStyles } from "@material-ui/core/styles"
 import { AppBar, Toolbar, Container, Link } from "@material-ui/core"
 import { Link as GatsbyLink } from "gatsby-theme-material-ui"
+
+function Navbar({ className, ...rest }) {
+  const classes = useStyles()
+  const handleClickLink = useSmoothScroll()
+
+  return (
+    <AppBar
+      component="nav"
+      position="static"
+      {...rest}
+      className={classnames(classes.appBar, className)}
+    >
+      <Container>
+        <Toolbar className={classes.toolbar} disableGutters>
+          <div className={classes.titleContainer}>
+            <GatsbyLink title="Strona główna" color="inherit" to={routes.HOME}>
+              <img className={classes.logo} src={logo} alt="logo" />
+            </GatsbyLink>
+          </div>
+          <div className={classes.divider} />
+          <div className={classes.linkContainer}>
+            <Link
+              title="Start"
+              color="inherit"
+              href={"#" + HEADER_ID}
+              onClick={handleClickLink(HEADER_ID)}
+            >
+              Start
+            </Link>
+            <Link
+              title="Portfolio"
+              color="inherit"
+              href={"#" + PORTFOLIO_SECTION_ID}
+              onClick={handleClickLink(PORTFOLIO_SECTION_ID)}
+            >
+              Portfolio
+            </Link>
+            <Link
+              title="Contact"
+              color="inherit"
+              href={"#" + CONTACT_SECTION_ID}
+              onClick={handleClickLink(CONTACT_SECTION_ID)}
+            >
+              Contact
+            </Link>
+          </div>
+        </Toolbar>
+      </Container>
+    </AppBar>
+  )
+}
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -52,56 +103,5 @@ const useStyles = makeStyles(theme => ({
     fontSize: "1.25rem",
   },
 }))
-
-function Navbar({ className, ...rest }) {
-  const classes = useStyles()
-  const handleClickLink = useSmoothScroll()
-
-  return (
-    <AppBar
-      component="nav"
-      position="static"
-      {...rest}
-      className={classnames(classes.appBar, className)}
-    >
-      <Container>
-        <Toolbar className={classes.toolbar} disableGutters>
-          <div className={classes.titleContainer}>
-            <GatsbyLink title="Strona główna" color="inherit" to={routes.HOME}>
-              <img className={classes.logo} src={logo} alt="logo" />
-            </GatsbyLink>
-          </div>
-          <div className={classes.divider} />
-          <div className={classes.linkContainer}>
-            <Link
-              title="Start"
-              color="inherit"
-              href={"#" + HEADER_ID}
-              onClick={handleClickLink(HEADER_ID)}
-            >
-              Start
-            </Link>
-            <Link
-              title="Projekty"
-              color="inherit"
-              href={"#" + PROJECTS_SECTION_ID}
-              onClick={handleClickLink(PROJECTS_SECTION_ID)}
-            >
-              Projekty
-            </Link>
-            <Link
-              title="Kontakt"
-              color="inherit"
-              href={"#" + CONTACT_SECTION_ID}
-              onClick={handleClickLink(CONTACT_SECTION_ID)}
-            >
-              Kontakt
-            </Link>
-          </div>
-        </Toolbar>
-      </Container>
-    </AppBar>
-  )
-}
 
 export default Navbar

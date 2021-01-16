@@ -15,6 +15,68 @@ import {
 } from "@material-ui/core"
 import BackgroundImage from "gatsby-background-image"
 
+function Project({
+  reverse,
+  title,
+  description,
+  technologies,
+  github,
+  live,
+  img,
+  fluid,
+}) {
+  const classes = useStyles()
+  return (
+    <Card
+      className={classnames(classes.card, {
+        reverse,
+      })}
+    >
+      {fluid ? (
+        <BackgroundImage
+          fluid={fluid}
+          title={title}
+          className={classes.cover}
+        />
+      ) : (
+        <CardMedia image={img} title={title} className={classes.cover} />
+      )}
+      <CardContent className={classes.cardContent}>
+        <div className={classes.contentContainer}>
+          <Typography variant="h3" gutterBottom>
+            {title}
+          </Typography>
+          <Typography>{description}</Typography>
+        </div>
+        <div className={classes.divider}></div>
+        <div className={classes.technologies}>
+          {technologies.map(technology => {
+            return (
+              <Chip key={technology} label={technology} color="secondary" />
+            )
+          })}
+        </div>
+        <div className={classes.buttons}>
+          {github && (
+            <Link underline="none" href={github}>
+              <Button variant="contained" color="secondary">
+                GitHub
+              </Button>
+            </Link>
+          )}
+          {live && (
+            <Link underline="none" href={live}>
+              <Button variant="contained" color="secondary">
+                Online
+              </Button>
+            </Link>
+          )}
+        </div>
+      </CardContent>
+    </Card>
+  )
+}
+
 const useStyles = makeStyles(theme => ({
   card: {
     display: "flex",
@@ -71,68 +133,6 @@ const useStyles = makeStyles(theme => ({
     },
   },
 }))
-
-function Project({
-  reverse,
-  title,
-  description,
-  technologies,
-  github,
-  live,
-  img,
-  fluid,
-}) {
-  const classes = useStyles()
-  return (
-    <Card
-      className={classnames(classes.card, {
-        reverse,
-      })}
-    >
-      {fluid ? (
-        <BackgroundImage
-          fluid={fluid}
-          title={title}
-          className={classes.cover}
-        />
-      ) : (
-        <CardMedia image={img} title={title} className={classes.cover} />
-      )}
-      <CardContent className={classes.cardContent}>
-        <div className={classes.contentContainer}>
-          <Typography variant="h3" gutterBottom>
-            {title}
-          </Typography>
-          <Typography>{description}</Typography>
-        </div>
-        <div className={classes.divider}></div>
-        <div className={classes.technologies}>
-          {technologies.map(technology => {
-            return (
-              <Chip key={technology} label={technology} color="secondary" />
-            )
-          })}
-        </div>
-        <div className={classes.buttons}>
-          {github && (
-            <Link underline="none" href={github}>
-              <Button variant="contained" color="secondary">
-                Github
-              </Button>
-            </Link>
-          )}
-          {live && (
-            <Link underline="none" href={live}>
-              <Button variant="contained" color="secondary">
-                Wersja online
-              </Button>
-            </Link>
-          )}
-        </div>
-      </CardContent>
-    </Card>
-  )
-}
 
 Project.defaultProps = {
   reverse: false,

@@ -1,15 +1,11 @@
-const siteUrl = "https://dawid-wysokinski.pl"
+const siteUrl = "https://dwysokinski.me"
 
 module.exports = {
   siteMetadata: {
-    title: `Dawid Wysokiński`,
-    description: `Programista stron WWW & Full Stack Web Developer & Frontend Developer & Backend Developer.`,
-    author: `@Dawid56143781`,
+    title: `Dawid Wysokiński | Full Stack Web Developer`,
+    description: `Dawid Wysokiński - Full Stack Web Developer | Back End Developer | Front End Developer`,
+    authorTwitter: `@Dawid56143781`,
     authorFullName: "Dawid Wysokiński",
-    email: "xyztojajestem@gmail.com",
-    fb: "https://www.facebook.com/dawidwysokinski00",
-    twitter: "https://twitter.com/Dawid56143781",
-    github: "https://github.com/Kichiyaki",
     siteUrl,
   },
   plugins: [
@@ -26,11 +22,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Dawid Wysokiński`,
+        name: `dwysokinski.me`,
         short_name: `dw`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#303030`,
+        theme_color: `#303030`,
         display: `minimal-ui`,
         icon: `src/images/logo.svg`, // This path is relative to the root of the site.
       },

@@ -6,6 +6,41 @@ import { makeStyles } from "@material-ui/core/styles"
 import { Container, Typography, Button, Link } from "@material-ui/core"
 import bg from "./header-bg.jpg"
 
+export const HEADER_ID = "start"
+
+function Header() {
+  const classes = useStyles()
+  const handleLinkClick = useSmoothScroll()
+  return (
+    <header id={HEADER_ID} className={classes.header}>
+      <Container className={classes.container}>
+        <div>
+          <div className={classes.textContainer}>
+            <Typography gutterBottom variant="h1">
+              Full Stack Web Developer
+            </Typography>
+            <Typography variant="h3">
+              I create websites and web apps.
+            </Typography>
+            <Typography gutterBottom variant="h3">
+              Have an idea, a project or a problem you would like to discuss?
+            </Typography>
+          </div>
+          <Link
+            underline="none"
+            to={"#" + SECTION_ID}
+            onClick={handleLinkClick(SECTION_ID)}
+          >
+            <Button variant="outlined" size="large">
+              <Typography variant="h4">Get in touch</Typography>
+            </Button>
+          </Link>
+        </div>
+      </Container>
+    </header>
+  )
+}
+
 const useStyles = makeStyles(theme => ({
   header: {
     minHeight: "100vh",
@@ -36,40 +71,5 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(5),
   },
 }))
-
-export const HEADER_ID = "start"
-
-function Header() {
-  const classes = useStyles()
-  const handleLinkClick = useSmoothScroll()
-  return (
-    <header id={HEADER_ID} className={classes.header}>
-      <Container className={classes.container}>
-        <div>
-          <div className={classes.textContainer}>
-            <Typography gutterBottom variant="h1">
-              Full Stack Web Developer
-            </Typography>
-            <Typography variant="h3">
-              Tworzę aplikacje i strony internetowe.
-            </Typography>
-            <Typography gutterBottom variant="h3">
-              Masz projekt, pomysł lub problem, który chcesz ze mną omówić?
-            </Typography>
-          </div>
-          <Link
-            underline="none"
-            to={"#" + SECTION_ID}
-            onClick={handleLinkClick(SECTION_ID)}
-          >
-            <Button variant="outlined" size="large">
-              <Typography variant="h4">Skontaktuj się</Typography>
-            </Button>
-          </Link>
-        </div>
-      </Container>
-    </header>
-  )
-}
 
 export default Header
