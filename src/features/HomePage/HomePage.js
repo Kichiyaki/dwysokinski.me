@@ -1,25 +1,25 @@
-import React from "react"
+import React from 'react';
 
-import { makeStyles } from "@material-ui/core/styles"
-import { Divider } from "@material-ui/core"
-import Layout from "@components/Layout/Layout"
-import SEO from "@components/SEO"
-import Header from "./components/Header"
-import MyPriorities from "./components/MyPriorities/MyPriorities"
-import Technologies from "./components/Technologies/Technologies"
-import Portfolio from "./components/Portfolio/Portfolio"
-import Contact from "./components/Contact"
+import { makeStyles } from '@material-ui/core/styles';
+import { Divider } from '@material-ui/core';
+import Layout from '@components/Layout/Layout';
+import SEO from '@components/SEO';
+import Header from './components/Header';
+import MyPriorities from './components/MyPriorities/MyPriorities';
+import Technologies from './components/Technologies/Technologies';
+import Portfolio from './components/Portfolio/Portfolio';
+import Contact from './components/Contact';
 
 const useStyles = makeStyles(theme => ({
   layout: {
     padding: 0,
   },
-}))
+}));
 
 const HomePage = ({ location }) => {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
-    <Layout className={classes.layout} navbarProps={{ position: "absolute" }}>
+    <Layout className={classes.layout} navbarProps={{ position: 'absolute' }}>
       <SEO pathname={location.pathname} />
       <Header />
       <MyPriorities />
@@ -29,7 +29,7 @@ const HomePage = ({ location }) => {
       <Contact />
       <Divider />
     </Layout>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

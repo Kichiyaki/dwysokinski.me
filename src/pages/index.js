@@ -1,7 +1,7 @@
-import React from "react"
+import React from 'react';
 
-import HomePage from "@features/HomePage/HomePage"
+import HomePage from '@features/HomePage/HomePage';
 
-const IndexPage = props => <HomePage {...props} />
+const IndexPage = props => <HomePage {...props} />;
 
-export default IndexPage
+export default IndexPage;

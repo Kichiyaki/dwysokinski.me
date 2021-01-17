@@ -1,15 +1,15 @@
-import React from "react"
+import React from 'react';
 
-import { makeStyles } from "@material-ui/core/styles"
-import { Container, Typography, Grid } from "@material-ui/core"
-import Section from "@components/Section"
-import speedIcon from "./speed.svg"
-import responsiveIcon from "./responsive.svg"
-import securityIcon from "./security.svg"
-import intuitiveIcon from "./intuitive.svg"
+import { makeStyles } from '@material-ui/core/styles';
+import { Container, Typography, Grid } from '@material-ui/core';
+import Section from '@components/Section';
+import speedIcon from './speed.svg';
+import responsiveIcon from './responsive.svg';
+import securityIcon from './security.svg';
+import intuitiveIcon from './intuitive.svg';
 
 function MyPriorities() {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <Section>
       <Container className={classes.container}>
@@ -53,21 +53,21 @@ function MyPriorities() {
         </Grid>
       </Container>
     </Section>
-  )
+  );
 }
 
 const useStyles = makeStyles(theme => ({
   icon: {
     width: 128,
     height: 128,
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down('md')]: {
       width: 96,
       height: 96,
     },
   },
   container: {
-    textAlign: "center",
+    textAlign: 'center',
   },
-}))
+}));
 
-export default MyPriorities
+export default MyPriorities;

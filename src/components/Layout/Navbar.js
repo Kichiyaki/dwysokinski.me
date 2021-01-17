@@ -1,19 +1,19 @@
-import React from "react"
-import classnames from "classnames"
-import * as routes from "@config/routes"
-import useSmoothScroll from "@libs/useSmoothScroll"
-import logo from "@images/logo.svg"
-import { HEADER_ID } from "@features/HomePage/components/Header"
-import { SECTION_ID as PORTFOLIO_SECTION_ID } from "@features/HomePage/components/Portfolio/Portfolio"
-import { SECTION_ID as CONTACT_SECTION_ID } from "@features/HomePage/components/Contact"
+import React from 'react';
+import classnames from 'classnames';
+import * as routes from '@config/routes';
+import useSmoothScroll from '@libs/useSmoothScroll';
+import logo from '@images/logo.svg';
+import { HEADER_ID } from '@features/HomePage/components/Header';
+import { SECTION_ID as PORTFOLIO_SECTION_ID } from '@features/HomePage/components/Portfolio/Portfolio';
+import { SECTION_ID as CONTACT_SECTION_ID } from '@features/HomePage/components/Contact';
 
-import { makeStyles } from "@material-ui/core/styles"
-import { AppBar, Toolbar, Container, Link } from "@material-ui/core"
-import { Link as GatsbyLink } from "gatsby-theme-material-ui"
+import { makeStyles } from '@material-ui/core/styles';
+import { AppBar, Toolbar, Container, Link } from '@material-ui/core';
+import { Link as GatsbyLink } from 'gatsby-theme-material-ui';
 
 function Navbar({ className, ...rest }) {
-  const classes = useStyles()
-  const handleClickLink = useSmoothScroll()
+  const classes = useStyles();
+  const handleClickLink = useSmoothScroll();
 
   return (
     <AppBar
@@ -34,7 +34,7 @@ function Navbar({ className, ...rest }) {
             <Link
               title="Start"
               color="inherit"
-              href={"#" + HEADER_ID}
+              href={'#' + HEADER_ID}
               onClick={handleClickLink(HEADER_ID)}
             >
               Start
@@ -42,7 +42,7 @@ function Navbar({ className, ...rest }) {
             <Link
               title="Portfolio"
               color="inherit"
-              href={"#" + PORTFOLIO_SECTION_ID}
+              href={'#' + PORTFOLIO_SECTION_ID}
               onClick={handleClickLink(PORTFOLIO_SECTION_ID)}
             >
               Portfolio
@@ -50,7 +50,7 @@ function Navbar({ className, ...rest }) {
             <Link
               title="Contact"
               color="inherit"
-              href={"#" + CONTACT_SECTION_ID}
+              href={'#' + CONTACT_SECTION_ID}
               onClick={handleClickLink(CONTACT_SECTION_ID)}
             >
               Contact
@@ -59,49 +59,49 @@ function Navbar({ className, ...rest }) {
         </Toolbar>
       </Container>
     </AppBar>
-  )
+  );
 }
 
 const useStyles = makeStyles(theme => ({
   appBar: {
-    backgroundColor: "transparent",
-    color: "#fff",
-    boxShadow: "none",
+    backgroundColor: 'transparent',
+    color: '#fff',
+    boxShadow: 'none',
   },
   linkContainer: {
-    "& > *:not(:last-child)": {
+    '& > *:not(:last-child)': {
       marginRight: theme.spacing(1.5),
     },
-    [theme.breakpoints.down("xs")]: {
-      "& > *:not(:last-child)": {
+    [theme.breakpoints.down('xs')]: {
+      '& > *:not(:last-child)': {
         marginRight: theme.spacing(0.75),
       },
     },
   },
   logo: {
-    width: "56px",
-    height: "auto",
-    [theme.breakpoints.down("xs")]: {
-      width: "48px",
+    width: '56px',
+    height: 'auto',
+    [theme.breakpoints.down('xs')]: {
+      width: '48px',
     },
   },
   divider: {
     flexGrow: 1,
   },
   link: {
-    width: "100%",
+    width: '100%',
   },
   titleContainer: {
-    display: "flex",
-    alignItems: "center",
-    "& > *:not(:last-child)": {
+    display: 'flex',
+    alignItems: 'center',
+    '& > *:not(:last-child)': {
       marginRight: theme.spacing(1),
     },
   },
   toolbar: {
     padding: theme.spacing(2, 0),
-    fontSize: "1.25rem",
+    fontSize: '1.25rem',
   },
-}))
+}));
 
-export default Navbar
+export default Navbar;

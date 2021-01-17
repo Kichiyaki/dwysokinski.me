@@ -1,23 +1,23 @@
-import React from "react"
+import React from 'react';
 
-import { makeStyles } from "@material-ui/core/styles"
-import { Typography, Container, Link } from "@material-ui/core"
+import { makeStyles } from '@material-ui/core/styles';
+import { Typography, Container, Link } from '@material-ui/core';
 import {
   Email as EmailIcon,
   GitHub as GitHubIcon,
   Facebook as FacebookIcon,
-} from "@material-ui/icons"
-import Section from "@components/Section"
+} from '@material-ui/icons';
+import Section from '@components/Section';
 
-export const SECTION_ID = "contact"
+export const SECTION_ID = 'contact';
 
 function Contact() {
-  const classes = useStyles()
+  const classes = useStyles();
 
   const linkProps = {
-    underline: "hover",
-    color: "secondary",
-  }
+    underline: 'hover',
+    color: 'secondary',
+  };
 
   return (
     <Section size="small" id={SECTION_ID}>
@@ -47,30 +47,30 @@ function Contact() {
         </div>
       </Container>
     </Section>
-  )
+  );
 }
 
 const useStyles = makeStyles(theme => {
   return {
     container: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
     urlContainer: {
-      "& > *:not(:last-child)": {
+      '& > *:not(:last-child)': {
         marginBottom: theme.spacing(0.5),
       },
-      "& > *": {
-        display: "flex",
-        alignItems: "center",
-        wordBreak: "break-all",
-        "& > *:not(:last-child)": {
+      '& > *': {
+        display: 'flex',
+        alignItems: 'center',
+        wordBreak: 'break-all',
+        '& > *:not(:last-child)': {
           marginRight: theme.spacing(1),
         },
       },
     },
-  }
-})
+  };
+});
 
-export default Contact
+export default Contact;

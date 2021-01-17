@@ -1,26 +1,26 @@
-import React from "react"
+import React from 'react';
 
-import { makeStyles } from "@material-ui/core/styles"
-import { Container, Typography } from "@material-ui/core"
-import { Link } from "gatsby-theme-material-ui"
-import Layout from "@components/Layout/Layout"
-import SEO from "@components/SEO"
+import { makeStyles } from '@material-ui/core/styles';
+import { Container, Typography } from '@material-ui/core';
+import { Link } from 'gatsby-theme-material-ui';
+import Layout from '@components/Layout/Layout';
+import SEO from '@components/SEO';
 
 const useStyles = makeStyles(() => ({
   container: {
-    minHeight: "100vh",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    textAlign: "center",
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    textAlign: 'center',
   },
   layout: {
-    padding: "0",
+    padding: '0',
   },
-}))
+}));
 
 const NotFoundPage = ({ location }) => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <Layout className={classes.layout} showNavbar={false} showFooter={false}>
@@ -44,7 +44,7 @@ const NotFoundPage = ({ location }) => {
         </Typography>
       </Container>
     </Layout>
-  )
-}
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;

@@ -1,8 +1,8 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
-import ogThumbnail from "@images/og_thumbnail.png"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
+import ogThumbnail from '@images/og_thumbnail.png';
 
 function SEO({ description, lang, meta, title, pathname }) {
   const { site } = useStaticQuery(
@@ -18,9 +18,9 @@ function SEO({ description, lang, meta, title, pathname }) {
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
 
   return (
     <Helmet
@@ -28,7 +28,7 @@ function SEO({ description, lang, meta, title, pathname }) {
         lang,
       }}
       title={title ?? site.siteMetadata.title}
-      titleTemplate={title ? `%s | ${site.siteMetadata.title}` : "%s"}
+      titleTemplate={title ? `%s | ${site.siteMetadata.title}` : '%s'}
       meta={[
         {
           name: `description`,
@@ -105,20 +105,20 @@ function SEO({ description, lang, meta, title, pathname }) {
         content={`${site.siteMetadata.siteUrl}${pathname}`}
       ></link>
     </Helmet>
-  )
+  );
 }
 
 SEO.defaultProps = {
   lang: `pl`,
   meta: [],
   description: ``,
-}
+};
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-}
+};
 
-export default SEO
+export default SEO;

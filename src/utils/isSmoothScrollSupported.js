@@ -1,1 +1,1 @@
-export default () => "scrollBehavior" in document.documentElement.style
+export default () => 'scrollBehavior' in document.documentElement.style;

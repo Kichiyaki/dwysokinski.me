@@ -1,9 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
-import classnames from "classnames"
-import notFound from "./not-found.jpg"
+import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import notFound from './not-found.jpg';
 
-import { makeStyles } from "@material-ui/core/styles"
+import { makeStyles } from '@material-ui/core/styles';
 import {
   Card,
   CardContent,
@@ -12,8 +12,8 @@ import {
   Button,
   Chip,
   Link,
-} from "@material-ui/core"
-import BackgroundImage from "gatsby-background-image"
+} from '@material-ui/core';
+import BackgroundImage from 'gatsby-background-image';
 
 function Project({
   reverse,
@@ -25,7 +25,7 @@ function Project({
   img,
   fluid,
 }) {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <Card
       className={classnames(classes.card, {
@@ -53,7 +53,7 @@ function Project({
           {technologies.map(technology => {
             return (
               <Chip key={technology} label={technology} color="secondary" />
-            )
+            );
           })}
         </div>
         <div className={classes.buttons}>
@@ -74,29 +74,29 @@ function Project({
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
 
 const useStyles = makeStyles(theme => ({
   card: {
-    display: "flex",
-    minHeight: "400px",
-    "&.reverse": {
-      flexDirection: "row-reverse",
-      [theme.breakpoints.down("sm")]: {
-        flexDirection: "column",
+    display: 'flex',
+    minHeight: '400px',
+    '&.reverse': {
+      flexDirection: 'row-reverse',
+      [theme.breakpoints.down('sm')]: {
+        flexDirection: 'column',
       },
     },
-    [theme.breakpoints.down("sm")]: {
-      flexDirection: "column",
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
     },
   },
   cardContent: {
-    display: "flex",
-    flexDirection: "column",
-    width: "45%",
-    [theme.breakpoints.down("sm")]: {
-      width: "100%",
+    display: 'flex',
+    flexDirection: 'column',
+    width: '45%',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
     },
   },
   divider: {
@@ -107,42 +107,42 @@ const useStyles = makeStyles(theme => ({
   },
   technologies: {
     marginBottom: theme.spacing(2),
-    "& > *:not(:last-child)": {
+    '& > *:not(:last-child)': {
       marginRight: theme.spacing(1),
     },
-    "& > *": {
+    '& > *': {
       marginBottom: theme.spacing(1),
     },
   },
   buttons: {
-    "& > *:not(:last-child)": {
+    '& > *:not(:last-child)': {
       marginRight: theme.spacing(1),
     },
-    "& > *": {
+    '& > *': {
       marginBottom: theme.spacing(1),
-      [theme.breakpoints.down("xs")]: {
-        width: "100%",
+      [theme.breakpoints.down('xs')]: {
+        width: '100%',
       },
     },
   },
   cover: {
-    width: "55%",
-    [theme.breakpoints.down("sm")]: {
-      width: "100%",
-      paddingTop: "56.25%",
+    width: '55%',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      paddingTop: '56.25%',
     },
   },
-}))
+}));
 
 Project.defaultProps = {
   reverse: false,
-  title: "",
-  description: "",
+  title: '',
+  description: '',
   technologies: [],
-  github: "",
-  live: "",
+  github: '',
+  live: '',
   img: notFound,
-}
+};
 
 Project.propTypes = {
   reverse: PropTypes.bool.isRequired,
@@ -152,6 +152,6 @@ Project.propTypes = {
   github: PropTypes.string.isRequired,
   live: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
-}
+};
 
-export default Project
+export default Project;

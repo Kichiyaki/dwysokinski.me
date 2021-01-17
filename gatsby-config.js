@@ -1,11 +1,11 @@
-const siteUrl = "https://dwysokinski.me"
+const siteUrl = 'https://dwysokinski.me';
 
 module.exports = {
   siteMetadata: {
     title: `Dawid Wysokiński | Full Stack Web Developer`,
     description: `Dawid Wysokiński - Full Stack Web Developer | Back End Developer | Front End Developer`,
     authorTwitter: `@Dawid56143781`,
-    authorFullName: "Dawid Wysokiński",
+    authorFullName: 'Dawid Wysokiński',
     siteUrl,
   },
   plugins: [
@@ -39,16 +39,16 @@ module.exports = {
     },
     `gatsby-plugin-sitemap`,
     {
-      resolve: "gatsby-plugin-robots-txt",
+      resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: siteUrl,
-        sitemap: siteUrl + "/sitemap.xml",
+        sitemap: siteUrl + '/sitemap.xml',
         env: {
           development: {
-            policy: [{ userAgent: "*", disallow: ["/"] }],
+            policy: [{ userAgent: '*', disallow: ['/'] }],
           },
           production: {
-            policy: [{ userAgent: "*", allow: "/" }],
+            policy: [{ userAgent: '*', allow: '/' }],
           },
         },
       },
@@ -57,4 +57,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

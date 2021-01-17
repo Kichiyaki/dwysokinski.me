@@ -1,16 +1,16 @@
-import React from "react"
-import useSmoothScroll from "@libs/useSmoothScroll"
-import { SECTION_ID } from "./Contact"
+import React from 'react';
+import useSmoothScroll from '@libs/useSmoothScroll';
+import { SECTION_ID } from './Contact';
 
-import { makeStyles } from "@material-ui/core/styles"
-import { Container, Typography, Button, Link } from "@material-ui/core"
-import bg from "./header-bg.jpg"
+import { makeStyles } from '@material-ui/core/styles';
+import { Container, Typography, Button, Link } from '@material-ui/core';
+import bg from './header-bg.jpg';
 
-export const HEADER_ID = "start"
+export const HEADER_ID = 'start';
 
 function Header() {
-  const classes = useStyles()
-  const handleLinkClick = useSmoothScroll()
+  const classes = useStyles();
+  const handleLinkClick = useSmoothScroll();
   return (
     <header id={HEADER_ID} className={classes.header}>
       <Container className={classes.container}>
@@ -28,7 +28,7 @@ function Header() {
           </div>
           <Link
             underline="none"
-            to={"#" + SECTION_ID}
+            to={'#' + SECTION_ID}
             onClick={handleLinkClick(SECTION_ID)}
           >
             <Button variant="outlined" size="large">
@@ -38,31 +38,31 @@ function Header() {
         </div>
       </Container>
     </header>
-  )
+  );
 }
 
 const useStyles = makeStyles(theme => ({
   header: {
-    minHeight: "100vh",
+    minHeight: '100vh',
     backgroundImage: `url(${bg})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    clipPath: "polygon(0 0,100% 0,100% 80vh,0 100%)",
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    clipPath: 'polygon(0 0,100% 0,100% 80vh,0 100%)',
 
-    height: "100%",
-    display: "flex",
-    justifyContent: "center",
-    flexDirection: "column",
-    [theme.breakpoints.down("sm")]: {
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    [theme.breakpoints.down('sm')]: {
       margin: 0,
-      clipPath: "none",
+      clipPath: 'none',
     },
   },
   container: {
-    textAlign: "center",
-    height: "100%",
+    textAlign: 'center',
+    height: '100%',
     paddingBottom: theme.spacing(8),
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('sm')]: {
       paddingBottom: theme.spacing(1),
     },
   },
@@ -70,6 +70,6 @@ const useStyles = makeStyles(theme => ({
     paddingTop: theme.spacing(12),
     paddingBottom: theme.spacing(5),
   },
-}))
+}));
 
-export default Header
+export default Header;
