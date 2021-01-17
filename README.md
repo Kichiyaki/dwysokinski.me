@@ -2,7 +2,7 @@
 
 My personal website.
 
-![Screenshot](/screenshots/homepage.png?raw=true)
+![Screenshot](/src/images/projects/dw.png?raw=true)
 
 ## Development
 
