@@ -178,10 +178,10 @@ function Technologies() {
 const useStyles = makeStyles(theme => ({
   grid: {
     display: 'grid',
-    gridTemplateColumns: `repeat(13, minmax(max-content, 1fr));`,
+    gridTemplateColumns: `repeat(13, minmax(0, 1fr));`,
     gap: theme.spacing(1, 1),
     [theme.breakpoints.down('md')]: {
-      gridTemplateColumns: `repeat(6, minmax(max-content, 1fr));`,
+      gridTemplateColumns: `repeat(6, minmax(0, 1fr));`,
       '& > div:last-child': {
         gridColumnStart: '3',
         gridColumnEnd: 'span 2',
@@ -193,7 +193,7 @@ const useStyles = makeStyles(theme => ({
       },
     },
     [theme.breakpoints.down('xs')]: {
-      gridTemplateColumns: `repeat(3, minmax(max-content, 1fr));`,
+      gridTemplateColumns: `repeat(3, minmax(0, 1fr));`,
       '& > div:last-child': {
         display: 'block',
         gridColumnStart: '2',
