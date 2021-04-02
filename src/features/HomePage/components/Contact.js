@@ -25,8 +25,8 @@ function Contact() {
         <div className={classes.urlContainer}>
           <Typography variant="h6">
             <EmailIcon fontSize="large" />
-            <Link href="mailto:dawidwysokinski000@gmail.com" {...linkProps}>
-              dawidwysokinski000@gmail.com
+            <Link href="mailto:contact@dwysokinski.me" {...linkProps}>
+              contact@dwysokinski.me
             </Link>
           </Typography>
           <Typography variant="h6">

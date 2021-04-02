@@ -3,7 +3,7 @@ const siteUrl = 'https://dwysokinski.me';
 module.exports = {
   siteMetadata: {
     title: `Dawid Wysokiński | Full Stack Web Developer`,
-    description: `Dawid Wysokiński - Full Stack Web Developer | Back End Developer | Front End Developer`,
+    description: `Dawid Wysokiński - Full Stack Web Developer | Back End Developer | Front End Developer | Golang Developer | React Developer | JavaScript Developer`,
     authorTwitter: `@Dawid56143781`,
     authorFullName: 'Dawid Wysokiński',
     siteUrl,
