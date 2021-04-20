@@ -7,6 +7,9 @@ module.exports = {
     authorTwitter: `@Dawid56143781`,
     authorFullName: 'Dawid Wysokiński',
     siteUrl,
+    email: 'contact@dwysokinski.me',
+    github: 'https://github.com/Kichiyaki',
+    facebook: 'https://www.facebook.com/dawidwysokinski00',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
