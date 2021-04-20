@@ -1,0 +1,16 @@
+
+{
+  "name": "dwysokinski.me",
+  "schemaPath": "schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "http://localhost:8000/___graphql",
+        "headers": {
+          "user-agent": "IDE"
+        },
+        "introspect": true
+      }
+    }
+  }
+}

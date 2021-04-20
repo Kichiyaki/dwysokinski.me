@@ -1,22 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 import notFound from './not-found.jpg';
 
 import { makeStyles } from '@material-ui/core/styles';
 import {
+  Button,
   Card,
   CardContent,
   CardMedia,
-  Typography,
-  Button,
   Chip,
   Link,
+  Typography,
 } from '@material-ui/core';
 import BackgroundImage from 'gatsby-background-image';
 
 function Project({
-  reverse,
   title,
   description,
   technologies,
@@ -27,11 +25,7 @@ function Project({
 }) {
   const classes = useStyles();
   return (
-    <Card
-      className={classnames(classes.card, {
-        reverse,
-      })}
-    >
+    <Card className={classes.card}>
       {fluid ? (
         <BackgroundImage
           fluid={fluid}
@@ -43,12 +37,12 @@ function Project({
       )}
       <CardContent className={classes.cardContent}>
         <div className={classes.contentContainer}>
-          <Typography variant="h3" gutterBottom>
+          <Typography variant="h3" gutterBottom className={classes.title}>
             {title}
           </Typography>
           <Typography>{description}</Typography>
         </div>
-        <div className={classes.divider}></div>
+        <div className={classes.divider} />
         <div className={classes.technologies}>
           {technologies.map(technology => {
             return (
@@ -81,26 +75,26 @@ const useStyles = makeStyles(theme => ({
   card: {
     display: 'flex',
     minHeight: '400px',
-    '&.reverse': {
-      flexDirection: 'row-reverse',
-      [theme.breakpoints.down('sm')]: {
-        flexDirection: 'column',
-      },
-    },
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column',
-    },
+    flexDirection: 'column',
+    height: '100%',
   },
   cardContent: {
     display: 'flex',
     flexDirection: 'column',
-    width: '45%',
-    [theme.breakpoints.down('sm')]: {
-      width: '100%',
-    },
+    height: '100%',
   },
   divider: {
     flex: 1,
+  },
+  title: {
+    overflowWrap: 'break-word',
+    wordWrap: 'break-word',
+    '-ms-word-break': 'break-all',
+    wordBreak: 'break-word',
+    '-ms-hyphens': 'auto',
+    '-moz-hyphens': 'auto',
+    '-webkit-hyphens': 'auto',
+    hyphens: 'auto',
   },
   contentContainer: {
     marginBottom: theme.spacing(8),
@@ -126,16 +120,12 @@ const useStyles = makeStyles(theme => ({
     },
   },
   cover: {
-    width: '55%',
-    [theme.breakpoints.down('sm')]: {
-      width: '100%',
-      paddingTop: '56.25%',
-    },
+    width: '100%',
+    paddingTop: '66.6666%',
   },
 }));
 
 Project.defaultProps = {
-  reverse: false,
   title: '',
   description: '',
   technologies: [],
@@ -145,7 +135,6 @@ Project.defaultProps = {
 };
 
 Project.propTypes = {
-  reverse: PropTypes.bool.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   technologies: PropTypes.arrayOf(PropTypes.string).isRequired,

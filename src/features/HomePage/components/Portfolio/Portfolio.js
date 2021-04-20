@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Container } from '@material-ui/core';
+import { Typography, Container, Grid } from '@material-ui/core';
 import Section, { BG_COLOR } from '@components/Section';
 import Project from './Project';
 
@@ -18,9 +18,11 @@ const useStyles = makeStyles(theme => ({
       margin: '3rem 0',
     },
   },
-  projects: {
-    '& > *:not(:last-child)': {
-      marginBottom: theme.spacing(2),
+  gridItem: {
+    [theme.breakpoints.up(750)]: {
+      flexGrow: 0,
+      flexBasis: '50%',
+      maxWidth: '50%',
     },
   },
 }));
@@ -39,7 +41,7 @@ function Portfolio() {
             relativePath
             childImageSharp {
               id
-              fluid(maxWidth: 1000) {
+              fluid(maxWidth: 1280) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -58,8 +60,8 @@ function Portfolio() {
         <Typography variant="h2" align="center" gutterBottom>
           My work
         </Typography>
-        <div className={classes.projects}>
-          {projects.map((project, index) => {
+        <Grid container spacing={3}>
+          {projects.map(project => {
             let fluid = undefined;
             if (project.fluid) {
               const edge = data.allCoverImages.edges.find(
@@ -71,15 +73,17 @@ function Portfolio() {
             }
 
             return (
-              <Project
+              <Grid
                 key={project.title}
-                {...project}
-                fluid={fluid}
-                reverse={(index + 1) % 2 === 0}
-              />
+                item
+                xs={12}
+                className={classes.gridItem}
+              >
+                <Project {...project} fluid={fluid} />
+              </Grid>
             );
           })}
-        </div>
+        </Grid>
       </Container>
     </Section>
   );
@@ -121,25 +125,18 @@ const projects = [
       'GraphQL',
       'Golang',
       'gqlgen',
-      'Echo',
+      'Gin',
       'PostgreSQL',
+      'TypeScript',
       'React',
+      'React Native',
       'Next.JS',
       'Material-UI',
       'Apollo',
-      'React Native',
     ],
     github: '',
     fluid: 'projects/zdam.png',
     live: 'https://zdamegzaminzawodowy.pl/',
-  },
-  {
-    title: 'matura-z-informatyki.pl',
-    description: '',
-    technologies: ['React', 'Next.JS', 'Bulma', 'Ghost'],
-    github: 'https://github.com/Kichiyaki/matura-z-informatyki.pl',
-    live: 'https://matura-z-informatyki.pl/',
-    fluid: 'projects/maturazinf.png',
   },
   {
     title: 'dwysokinski.me',

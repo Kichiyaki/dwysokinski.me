@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Container, Link } from '@material-ui/core';
@@ -14,34 +15,46 @@ export const SECTION_ID = 'contact';
 function Contact() {
   const classes = useStyles();
 
+  const {
+    site: { siteMetadata },
+  } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            email
+            github
+            facebook
+          }
+        }
+      }
+    `
+  );
+
   const linkProps = {
     underline: 'hover',
     color: 'secondary',
   };
-
   return (
     <Section size="small" id={SECTION_ID}>
       <Container maxWidth="md" className={classes.container}>
         <div className={classes.urlContainer}>
           <Typography variant="h6">
             <EmailIcon fontSize="large" />
-            <Link href="mailto:contact@dwysokinski.me" {...linkProps}>
-              contact@dwysokinski.me
+            <Link href={`mailto:${siteMetadata.email}`} {...linkProps}>
+              {siteMetadata.email}
             </Link>
           </Typography>
           <Typography variant="h6">
             <GitHubIcon fontSize="large" />
-            <Link href="https://github.com/Kichiyaki" {...linkProps}>
-              Kichiyaki
+            <Link href={siteMetadata.github} {...linkProps}>
+              {siteMetadata.github.replace('https://github.com/', '')}
             </Link>
           </Typography>
           <Typography variant="h6">
             <FacebookIcon fontSize="large" />
-            <Link
-              href="https://www.facebook.com/dawidwysokinski00"
-              {...linkProps}
-            >
-              /dawidwysokinski00
+            <Link href={siteMetadata.facebook} {...linkProps}>
+              {siteMetadata.facebook.replace('https://facebook.com', '')}
             </Link>
           </Typography>
         </div>
