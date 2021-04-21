@@ -54,7 +54,7 @@ function Contact() {
           <Typography variant="h6">
             <FacebookIcon fontSize="large" />
             <Link href={siteMetadata.facebook} {...linkProps}>
-              {siteMetadata.facebook.replace('https://facebook.com', '')}
+              {siteMetadata.facebook.replace('https://www.facebook.com', '')}
             </Link>
           </Typography>
         </div>
