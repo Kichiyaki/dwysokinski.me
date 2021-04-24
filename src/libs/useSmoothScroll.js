@@ -1,6 +1,6 @@
 import isSmoothScrollSupported from '@utils/isSmoothScrollSupported';
 
-export default () => {
+const useSmoothScroll = () => {
   return id => e => {
     if (isSmoothScrollSupported()) {
       e.preventDefault();
@@ -12,3 +12,5 @@ export default () => {
     }
   };
 };
+
+export default useSmoothScroll;

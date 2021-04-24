@@ -1,10 +1,22 @@
-FROM node:14.1.0-alpine as build-deps
+FROM node:14.16.1-alpine as build-deps
 
 ENV NODE_ENV=production
 
-#Stage 1
-
-RUN npm install --global gatsby-cli
+RUN apk --no-cache add shadow \
+    gcc \
+    musl-dev \
+    autoconf \
+    automake \
+    make \
+    libtool \
+    nasm \
+    tiff \
+    jpeg \
+    zlib \
+    zlib-dev \
+    file \
+    pkgconf
+RUN npm install --global gatsby-cli@3.3.0
 WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
 RUN yarn
@@ -13,8 +25,8 @@ RUN yarn build
 
 #Stage 2
 
-FROM nginx:1.17.5-alpine
+FROM nginx:1.20-alpine
 COPY --from=build-deps /usr/src/app/public /var/www
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY default.conf /etc/nginx/templates/default.conf.template
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

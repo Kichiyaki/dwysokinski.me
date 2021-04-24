@@ -1,1 +1,4 @@
-export default () => 'scrollBehavior' in document.documentElement.style;
+const isSmoothScrollSupported = () =>
+  'scrollBehavior' in document.documentElement.style;
+
+export default isSmoothScrollSupported;

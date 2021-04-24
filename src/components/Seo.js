@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import ogThumbnail from '@images/og_thumbnail.png';
 
-function SEO({ description, lang, meta, title, pathname }) {
+function Seo({ description, lang, meta, title, pathname }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -68,7 +68,7 @@ function SEO({ description, lang, meta, title, pathname }) {
         },
         {
           property: `og:locale`,
-          content: `pl`,
+          content: `en`,
         },
         {
           name: `twitter:creator`,
@@ -108,17 +108,17 @@ function SEO({ description, lang, meta, title, pathname }) {
   );
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
   lang: `pl`,
   meta: [],
   description: ``,
 };
 
-SEO.propTypes = {
+Seo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
 };
 
-export default SEO;
+export default Seo;

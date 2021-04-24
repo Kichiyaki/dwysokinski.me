@@ -3,7 +3,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Divider } from '@material-ui/core';
 import Layout from '@components/Layout/Layout';
-import SEO from '@components/SEO';
+import Seo from '@components/Seo';
 import Header from './components/Header';
 import MyPriorities from './components/MyPriorities/MyPriorities';
 import Technologies from './components/Technologies/Technologies';
@@ -20,7 +20,7 @@ const HomePage = ({ location }) => {
   const classes = useStyles();
   return (
     <Layout className={classes.layout} navbarProps={{ position: 'absolute' }}>
-      <SEO pathname={location.pathname} />
+      <Seo pathname={location.pathname} />
       <Header />
       <MyPriorities />
       <Divider />
