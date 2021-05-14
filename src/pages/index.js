@@ -1,7 +1,7 @@
 import React from 'react';
 
-import HomePage from '@features/HomePage/HomePage';
+import IndexPage from '@features/IndexPage/IndexPage';
 
-const IndexPage = props => <HomePage {...props} />;
+const IndexPage = props => <IndexPage {...props} />;
 
 export default IndexPage;
