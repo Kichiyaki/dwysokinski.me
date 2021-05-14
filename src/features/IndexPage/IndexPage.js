@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const HomePage = ({ location }) => {
+const IndexPage = ({ location }) => {
   const classes = useStyles();
   return (
     <Layout className={classes.layout} navbarProps={{ position: 'absolute' }}>
@@ -32,4 +32,4 @@ const HomePage = ({ location }) => {
   );
 };
 
-export default HomePage;
+export default IndexPage;

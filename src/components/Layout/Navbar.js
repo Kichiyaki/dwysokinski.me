@@ -1,11 +1,11 @@
 import React from 'react';
 import classnames from 'classnames';
-import * as routes from '@config/routes';
+import { Route } from '@config/routing';
 import useSmoothScroll from '@libs/useSmoothScroll';
 import logo from '@images/logo.svg';
-import { HEADER_ID } from '@features/HomePage/components/Header';
-import { SECTION_ID as PORTFOLIO_SECTION_ID } from '@features/HomePage/components/Portfolio/Portfolio';
-import { SECTION_ID as CONTACT_SECTION_ID } from '@features/HomePage/components/Contact';
+import { HEADER_ID } from '@features/IndexPage/components/Header';
+import { SECTION_ID as PORTFOLIO_SECTION_ID } from '@features/IndexPage/components/Portfolio/Portfolio';
+import { SECTION_ID as CONTACT_SECTION_ID } from '@features/IndexPage/components/Contact';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Container, Link } from '@material-ui/core';
@@ -25,7 +25,7 @@ function Navbar({ className, ...rest }) {
       <Container>
         <Toolbar className={classes.toolbar} disableGutters>
           <div className={classes.titleContainer}>
-            <GatsbyLink title="Strona główna" color="inherit" to={routes.HOME}>
+            <GatsbyLink title="Strona główna" color="inherit" to={Route.IndexPage}>
               <img className={classes.logo} src={logo} alt="logo" />
             </GatsbyLink>
           </div>
