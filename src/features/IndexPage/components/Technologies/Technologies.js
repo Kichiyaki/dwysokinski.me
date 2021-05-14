@@ -43,36 +43,36 @@ function Technologies() {
           Technologies / tools I use
         </Typography>
         <div className={classes.grid}>
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology
               fixed={findIcon('technologies/html5.png')}
               name="HTML"
             />
           </div>
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology fixed={findIcon('technologies/css.png')} name="CSS" />
           </div>
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology fixed={findIcon('technologies/scss.png')} name="SCSS" />
           </div>
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology
               fixed={findIcon('technologies/js.png')}
               name="JavaScript"
             />
           </div>
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology
               fixed={findIcon('technologies/typescript.png')}
               name="TypeScript"
             />
           </div>
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology
               fixed={findIcon('technologies/react.png')}
@@ -80,46 +80,46 @@ function Technologies() {
             />
           </div>
 
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology
               fixed={findIcon('technologies/gatsby.png')}
               name="Gatsby"
             />
           </div>
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology
               fixed={findIcon('technologies/nextjs.png')}
               name="Next.JS"
             />
           </div>
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology fixed={findIcon('technologies/jest.png')} name="Jest" />
           </div>
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology
               fixed={findIcon('technologies/express.png')}
               name="Express"
             />
           </div>
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology
               fixed={findIcon('technologies/nest.png')}
               name="Nest.JS"
             />
           </div>
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology
               fixed={findIcon('technologies/strapi.png')}
               name="Strapi"
             />
           </div>
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology
               fixed={findIcon('technologies/ghost.png')}
@@ -127,42 +127,42 @@ function Technologies() {
             />
           </div>
 
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology
               fixed={findIcon('technologies/graphql.png')}
               name="GraphQL"
             />
           </div>
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology
               fixed={findIcon('technologies/golang.png')}
               name="Golang"
             />
           </div>
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology
               fixed={findIcon('technologies/gqlgen.png')}
               name="gqlgen"
             />
           </div>
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology
               fixed={findIcon('technologies/golang.png')}
               name="Gin"
             />
           </div>
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology
               fixed={findIcon('technologies/postgresql.png')}
               name="PostgreSQL"
             />
           </div>
-          <div className={classes.hide}></div>
+          <div className={classes.hide} />
           <div>
             <Technology
               fixed={findIcon('technologies/docker.png')}
