@@ -103,7 +103,7 @@ function Seo({ description, lang, meta, title, pathname }) {
       <link
         rel="canonical"
         content={`${site.siteMetadata.siteUrl}${pathname}`}
-      ></link>
+      />
     </Helmet>
   );
 }

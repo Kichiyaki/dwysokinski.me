@@ -1,6 +1,9 @@
 FROM node:14.18.1-alpine as build-deps
 
-ENV NODE_ENV=production
+ARG PLAUSIBLE_CUSTOM_DOMAIN=""
+
+ENV PLAUSIBLE_CUSTOM_DOMAIN=$PLAUSIBLE_CUSTOM_DOMAIN \
+    NODE_ENV=production
 
 RUN apk --no-cache add shadow \
     gcc \
