@@ -18,7 +18,7 @@ RUN apk --no-cache add shadow \
     pkgconf
 RUN npm install --global gatsby-cli@3.3.0
 WORKDIR /usr/src/app
-COPY package.json yarn.lock ./
+COPY yarn.lock ./
 RUN yarn
 COPY . ./
 RUN yarn build
