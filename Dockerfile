@@ -20,8 +20,8 @@ RUN apk --no-cache add shadow \
     file \
     pkgconf
 WORKDIR /usr/src/app
+COPY package.json yarn.lock ./
 RUN yarn global add gatsby-cli@3.3.0
-COPY yarn.lock ./
 RUN yarn
 COPY . ./
 RUN yarn build
