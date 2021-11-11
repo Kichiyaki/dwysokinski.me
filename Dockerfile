@@ -19,8 +19,8 @@ RUN apk --no-cache add shadow \
     zlib-dev \
     file \
     pkgconf
-RUN npm install --global gatsby-cli@3.3.0
 WORKDIR /usr/src/app
+RUN yarn global add gatsby-cli@3.3.0
 COPY yarn.lock ./
 RUN yarn
 COPY . ./
