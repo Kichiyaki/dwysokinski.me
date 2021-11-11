@@ -41,7 +41,7 @@ jobs:
           context: .
           build-args: |
             PLAUSIBLE_CUSTOM_DOMAIN=${{ secrets.PLAUSIBLE_CUSTOM_DOMAIN }}
-            VERSION=v${{ steps.get_version.outputs.VERSION }}
+            VERSION=${{ steps.get_version.outputs.VERSION }}
           tags: |
             ${{ secrets.REGISTRY_NAME }}/dwysokinski.me:latest
             ${{ secrets.REGISTRY_NAME }}/dwysokinski.me:${{ steps.get_version.outputs.VERSION }}

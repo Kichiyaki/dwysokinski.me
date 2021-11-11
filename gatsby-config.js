@@ -1,4 +1,4 @@
-const DOMAIN = process.env.DOMAIN;
+const DOMAIN = 'dwysokinski.me';
 const SITE_URL = 'https://' + DOMAIN;
 
 module.exports = {
@@ -12,7 +12,6 @@ module.exports = {
     github: 'https://github.com/Kichiyaki',
     facebook: 'https://www.facebook.com/dawidwysokinski00',
     domain: DOMAIN,
-    plausibleCustomDomain: process.env.PLAUSIBLE_CUSTOM_DOMAIN,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -66,6 +65,13 @@ module.exports = {
             policy: [{ userAgent: '*', allow: '/' }],
           },
         },
+      },
+    },
+    {
+      resolve: `@kichiyaki/gatsby-plugin-plausible`,
+      options: {
+        domain: DOMAIN,
+        customDomain: process.env.PLAUSIBLE_CUSTOM_DOMAIN,
       },
     },
   ],
