@@ -1646,6 +1646,15 @@
     "@babel/runtime" "^7.7.2"
     regenerator-runtime "^0.13.3"
 
+"@kichiyaki/gatsby-plugin-plausible@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@kichiyaki/gatsby-plugin-plausible/-/gatsby-plugin-plausible-0.0.8.tgz#94f53c5a8f768b934228e4f43c5493c38885152b"
+  integrity sha512-DO03Z6NHRiwh8XHJtBJcLxMZ1a8cDjYM0inuGmNI33ea7fV4wdGVF5uHidlbdlls2hLfYPDkjOc0y2Yz3Ff/nw==
+  dependencies:
+    "@babel/runtime" "^7.9.2"
+    minimatch "3.0.4"
+    react "^17.0.2"
+
 "@kichiyaki/roboto@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@kichiyaki/roboto/-/roboto-1.0.0.tgz#6f5dfb40e2423940588946c952490b123ca8088b"
@@ -10269,7 +10278,7 @@ react-transition-group@^4.4.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@^17.0.1:
+react@^17.0.1, react@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
   integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
