@@ -23,7 +23,7 @@ function Header() {
               I create websites and web apps.
             </Typography>
             <Typography gutterBottom variant="h3">
-              Have an idea, a project or a problem you would like to discuss?
+              Do you have an idea, project or problem you would like to discuss?
             </Typography>
           </div>
           <Link

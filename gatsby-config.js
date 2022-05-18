@@ -4,13 +4,12 @@ const SITE_URL = 'https://' + DOMAIN;
 module.exports = {
   siteMetadata: {
     title: `Dawid Wysokiński | Full Stack Web Developer`,
-    description: `Dawid Wysokiński - Full Stack Web Developer | Back End Developer | Front End Developer | Golang Developer | React Developer | JavaScript Developer`,
+    description: `Dawid Wysokiński - Full Stack Web Developer | Backend Developer | Frontend Developer | Go Developer | React Developer | Node.js Developer`,
     authorTwitter: `@Dawid56143781`,
     authorFullName: 'Dawid Wysokiński',
     siteUrl: SITE_URL,
     email: 'contact@dwysokinski.me',
     github: 'https://github.com/Kichiyaki',
-    facebook: 'https://www.facebook.com/dawidwysokinski00',
     domain: DOMAIN,
   },
   plugins: [

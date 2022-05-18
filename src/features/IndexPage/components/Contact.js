@@ -3,11 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Container, Link } from '@material-ui/core';
-import {
-  Email as EmailIcon,
-  GitHub as GitHubIcon,
-  Facebook as FacebookIcon,
-} from '@material-ui/icons';
+import { Email as EmailIcon, GitHub as GitHubIcon } from '@material-ui/icons';
 import Section from '@components/Section';
 
 export const SECTION_ID = 'contact';
@@ -24,7 +20,6 @@ function Contact() {
           siteMetadata {
             email
             github
-            facebook
           }
         }
       }
@@ -49,12 +44,6 @@ function Contact() {
             <GitHubIcon fontSize="large" />
             <Link href={siteMetadata.github} {...linkProps}>
               {siteMetadata.github.replace('https://github.com/', '')}
-            </Link>
-          </Typography>
-          <Typography variant="h6">
-            <FacebookIcon fontSize="large" />
-            <Link href={siteMetadata.facebook} {...linkProps}>
-              {siteMetadata.facebook.replace('https://www.facebook.com', '')}
             </Link>
           </Typography>
         </div>

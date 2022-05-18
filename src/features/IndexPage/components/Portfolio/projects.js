@@ -2,7 +2,7 @@ const projects = [
   {
     title: 'TWHelp',
     description:
-      'A stat tracking and tools website, scripts, a public GraphQL API and a Discord bot for the browser-based game Tribal Wars.',
+      'A website with various stats and tools, scripts, a public GraphQL API and a Discord bot for the browser-based game Tribal Wars.',
     technologies: [
       'GraphQL',
       'Golang',
@@ -24,7 +24,6 @@ const projects = [
     ],
     github: 'https://github.com/tribalwarshelp',
     fluid: 'projects/twhelp.png',
-    live: 'https://tribalwarshelp.com/',
   },
   {
     title: 'Zdam Egzamin Zawodowy',
@@ -43,7 +42,7 @@ const projects = [
       'Create React App',
       'Material-UI',
       'Apollo',
-      'Traefik'
+      'Traefik',
     ],
     fluid: 'projects/zdam.png',
     live: 'https://zdamegzaminzawodowy.pl/',
