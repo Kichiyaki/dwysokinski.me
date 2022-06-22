@@ -28,7 +28,7 @@ RUN yarn build
 
 #Stage 2
 
-FROM nginx:1.21-alpine
+FROM nginx:1.23-alpine
 COPY --from=build-deps /usr/src/app/public /var/www
 COPY default.conf /etc/nginx/templates/default.conf.template
 EXPOSE 80
